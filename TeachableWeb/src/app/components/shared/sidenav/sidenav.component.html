@@ -1,0 +1,14 @@
+<mat-sidenav-container>
+    <mat-sidenav mode="side" [(opened)]="opened">
+        Teachable
+        <ul class="nav">
+            <li class="active"><a routerLink="/login"><i class="fas fa-chart-line"></i>login</a></li>
+            <li><a routerLink="/newsS"><i class="fas fa-random"></i>noticias</a></li>
+        </ul>
+    </mat-sidenav>
+    <mat-sidenav-content>
+        <button (click)="opened=!opened" mat-stroked-button ><mat-icon>menu</mat-icon></button>
+        <router-outlet></router-outlet>
+    </mat-sidenav-content>
+</mat-sidenav-container>
+<div>Icons made by <a href="https://www.flaticon.com/authors/ariefstudio" title="ariefstudio">ariefstudio</a> from <a href="https://www.flaticon.com/" title="Flaticon">www.flaticon.com</a></div>

@@ -11,12 +11,16 @@ import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { LoginComponent } from './components/login/login.component';
 import { SharedModule } from './components/shared/shared.module';
 import { MenuComponent } from './components/menu/menu.component';
+import { SidenavComponent } from './components/shared/sidenav/sidenav.component';
+import { NewsComponent } from './components/news/news.component';
 
 @NgModule({
   declarations: [
     AppComponent,
     LoginComponent,
-    MenuComponent
+    MenuComponent,
+    SidenavComponent,
+    NewsComponent
   ],
   imports: [
     BrowserModule,
