@@ -13,6 +13,7 @@ import { SharedModule } from './components/shared/shared.module';
 import { MenuComponent } from './components/menu/menu.component';
 import { SidenavComponent } from './components/shared/sidenav/sidenav.component';
 import { NewsComponent } from './components/news/news.component';
+import { TeacherComponent } from './components/teacher/teacher.component';
 
 @NgModule({
   declarations: [
@@ -20,7 +21,8 @@ import { NewsComponent } from './components/news/news.component';
     LoginComponent,
     MenuComponent,
     SidenavComponent,
-    NewsComponent
+    NewsComponent,
+    TeacherComponent
   ],
   imports: [
     BrowserModule,

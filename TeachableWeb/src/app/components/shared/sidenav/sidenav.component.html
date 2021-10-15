@@ -1,9 +1,8 @@
 <mat-sidenav-container>
     <mat-sidenav mode="side" [(opened)]="opened">
-        Teachable
+        <img src="./assets/img/logo.jpeg" width="75%">
         <ul class="nav">
-            <li class="active"><a routerLink="/login"><i class="fas fa-chart-line"></i>login</a></li>
-            <li><a routerLink="/newsS"><i class="fas fa-random"></i>noticias</a></li>
+            <li *ngFor="let item of links" ><span><a routerLink={{item.link}}><i class="fas fa-chart-line"></i>{{item.name}}</a></span></li>
         </ul>
     </mat-sidenav>
     <mat-sidenav-content>

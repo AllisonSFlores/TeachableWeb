@@ -11,7 +11,7 @@
                 <mat-label>Contraseña</mat-label>
                 <input matInput formControlName="password" type="password">
             </mat-form-field>
-            <button mat-raised-button  type="submit" [disabled]="form.invalid" class="ancho" color="accent">Ingresar</button>
+            <button mat-raised-button  (click)="ingresar()" [disabled]="form.invalid" class="ancho" color="accent">Ingresar</button>
         </form>
     </div>
 </div>

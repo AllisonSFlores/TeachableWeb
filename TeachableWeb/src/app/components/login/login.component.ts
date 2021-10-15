@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { FormBuilder, FormGroup, Validators } from '@angular/forms';
 import { MatSnackBar } from '@angular/material/snack-bar';
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-login',
@@ -9,7 +10,11 @@ import { MatSnackBar } from '@angular/material/snack-bar';
 })
 export class LoginComponent implements OnInit {
   form :FormGroup;
-  constructor(private formBuilder: FormBuilder,private _snackBar: MatSnackBar) { 
+  constructor(
+    private formBuilder: FormBuilder,
+    private _snackBar: MatSnackBar,
+    private router:Router
+    ) { 
     this.form=this.formBuilder.group({
       email:['',Validators.required],
       password:['',Validators.required]
@@ -22,6 +27,9 @@ export class LoginComponent implements OnInit {
     const email = this.form.value.email;
     const pass = this.form.value.password;
     this.error();
+    this.router.navigate(['teacher']);
+    console.log("ancldsan")
+
   }
   error(){
     this._snackBar.open('Todavia no funciona con el backend','',{
