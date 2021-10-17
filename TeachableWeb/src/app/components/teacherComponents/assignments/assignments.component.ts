@@ -14,7 +14,7 @@ export class AssignmentsComponent implements OnInit {
     "deadline":"12"}
     ];
     a=[{"name":"Noticias","link":"/teacher/newsT"},
-    {"name":"Salir","link":"/teacher/login"},
+    {"name":"Salir","link":"/login"},
     {"name":"Tareas","link":"/teacher/assigmentsT"},
     {"name":"Estudiantes","link":"/teacher/listStudenT"}];
   form :FormGroup;

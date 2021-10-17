@@ -12,6 +12,8 @@ import { MenuComponent } from '../components/teacherComponents/menu/menu.compone
 import { SharedModule } from '../components/shared/shared.module';
 import { TeacherComponent } from '../components/teacherComponents/teacher/teacher.component';
 import { SidenavComponent } from '../components/shared/sidenav/sidenav.component';
+import { ChatBoxComponent } from '../components/chat-box/chat-box.component';
+import { ChatComponent } from '../components/teacherComponents/chat/chat.component';
 
 @NgModule({
   declarations: [
@@ -20,7 +22,9 @@ import { SidenavComponent } from '../components/shared/sidenav/sidenav.component
     ListStudentComponent,
     MenuComponent,
     NewsComponent,
-    SidenavComponent
+    SidenavComponent,
+    ChatBoxComponent,
+    ChatComponent
   ],
   imports: [
     CommonModule,

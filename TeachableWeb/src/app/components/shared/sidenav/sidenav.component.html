@@ -1,11 +1,13 @@
 <mat-sidenav-container>
-    <mat-sidenav mode="side" opened>
+    <mat-sidenav mode="side" [(opened)]="opened">
         <img src="./assets/img/logo.jpeg" width="75%">
         <ul class="menu-hover-fill flex flex-col items-start leading-none text-2xl uppercase space-y-4">
             <li *ngFor="let item of links" ><span><a routerLink={{item.link}}><i class="fas fa-chart-line"></i>{{item.name}}</a></span></li>
         </ul>
     </mat-sidenav>
     
-  <mat-sidenav position="end">End</mat-sidenav>
-  <section><ng-content></ng-content></section>
+  <mat-sidenav-content>
+    <button (click)="opened=!opened" mat-stroked-button ><mat-icon>menu</mat-icon></button>
+      <ng-content></ng-content>
+    </mat-sidenav-content>
 </mat-sidenav-container>
