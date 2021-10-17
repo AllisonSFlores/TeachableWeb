@@ -7,7 +7,7 @@ import { SidenavComponent } from '../components/shared/sidenav/sidenav.component
 import { TeacherComponent } from '../components/teacherComponents/teacher/teacher.component';
 
 const routes: Routes = [
-  {path:'t',component:TeacherComponent},
+  {path:'',component:TeacherComponent},
   {path: 'newsT',component:NewsComponent},
   {path: 'assigmentsT',component:AssignmentsComponent},
   {path: 'listStudenT',component:ListStudentComponent},

@@ -13,6 +13,10 @@ export class AssignmentsComponent implements OnInit {
     "description":"Deben enviarme un correo para agregarlos a las lista de google",
     "deadline":"12"}
     ];
+    a=[{"name":"Noticias","link":"/teacher/newsT"},
+    {"name":"Salir","link":"/teacher/login"},
+    {"name":"Tareas","link":"/teacher/assigmentsT"},
+    {"name":"Estudiantes","link":"/teacher/listStudenT"}];
   form :FormGroup;
   constructor(private formBuilder: FormBuilder) {
     this.form=this.formBuilder.group({

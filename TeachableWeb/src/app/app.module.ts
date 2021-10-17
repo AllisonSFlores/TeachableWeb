@@ -10,22 +10,17 @@ import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { LoginComponent } from './components/login/login.component';
 import { SharedModule } from './components/shared/shared.module';
 
-//modulos
-import { TeacherModule } from './teacherModule/teacher.module';
-
 @NgModule({
   declarations: [
     AppComponent,
-    LoginComponent,
+    LoginComponent
   ],
   imports: [
     BrowserModule,
     ReactiveFormsModule,
-    TeacherModule,
     AppRoutingModule,
     BrowserAnimationsModule,
     SharedModule,
-    
   ],
   
   providers: [],

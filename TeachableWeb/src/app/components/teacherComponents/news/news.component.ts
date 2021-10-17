@@ -12,6 +12,10 @@ export class NewsComponent implements OnInit {
   {"title":"Info de primer clase",
   "description":"Deben enviarme un correo para agregarlos a las lista de google"}
   ];
+  a=[{"name":"Noticias","link":"/teacher/newsT"},
+    {"name":"Salir","link":"/teacher/login"},
+    {"name":"Tareas","link":"/teacher/assigmentsT"},
+    {"name":"Estudiantes","link":"/teacher/listStudenT"}];
   form :FormGroup;
   constructor(
     private formBuilder: FormBuilder,

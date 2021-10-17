@@ -4,7 +4,7 @@ import { LoginComponent } from './components/login/login.component';
 import { TeacherModule } from './teacherModule/teacher.module';
 const routes: Routes = [
   //{path:'', component:SidenavComponent},
-  {path:'teacher',component:TeacherModule},
+  {path:'teacher', loadChildren: () => import ('./teacherModule/teacher.module').then(x => x.TeacherModule)},
   {path: 'login', component:LoginComponent}
 ];
 

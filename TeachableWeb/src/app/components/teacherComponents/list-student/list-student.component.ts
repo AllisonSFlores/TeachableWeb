@@ -11,6 +11,10 @@ export class ListStudentComponent implements OnInit {
         "email":"allissolano@gmail"},{"id_card":2513,
         "name":"Allison",
         "email":"allissolano@gmail"}];
+        a=[{"name":"Noticias","link":"/teacher/newsT"},
+        {"name":"Salir","link":"/teacher/login"},
+        {"name":"Tareas","link":"/teacher/assigmentsT"},
+        {"name":"Estudiantes","link":"/teacher/listStudenT"}];
   constructor() { }
 
   ngOnInit(): void {
