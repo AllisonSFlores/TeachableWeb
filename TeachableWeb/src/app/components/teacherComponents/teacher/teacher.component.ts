@@ -6,7 +6,10 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./teacher.component.scss']
 })
 export class TeacherComponent implements OnInit {
-  a=[{"name":"Noticias","link":"/newsT"},{"name":"Salir","link":"/login"}];
+  a=[{"name":"Noticias","link":"/newsT"},
+    {"name":"Salir","link":"/login"},
+    {"name":"Tareas","link":"/assigmentsT"},
+    {"name":"Estudiantes","link":"/listStudenT"}];
   constructor() { }
 
   ngOnInit(): void {

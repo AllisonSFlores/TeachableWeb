@@ -2,7 +2,6 @@ import { NgModule } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
 import { ReactiveFormsModule } from '@angular/forms';
 
-
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
@@ -10,26 +9,23 @@ import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 //componentes
 import { LoginComponent } from './components/login/login.component';
 import { SharedModule } from './components/shared/shared.module';
-import { MenuComponent } from './components/menu/menu.component';
-import { SidenavComponent } from './components/shared/sidenav/sidenav.component';
-import { NewsComponent } from './components/news/news.component';
-import { TeacherComponent } from './components/teacher/teacher.component';
+
+//modulos
+import { TeacherModule } from './teacherModule/teacher.module';
 
 @NgModule({
   declarations: [
     AppComponent,
     LoginComponent,
-    MenuComponent,
-    SidenavComponent,
-    NewsComponent,
-    TeacherComponent
   ],
   imports: [
     BrowserModule,
     ReactiveFormsModule,
+    TeacherModule,
     AppRoutingModule,
     BrowserAnimationsModule,
-    SharedModule
+    SharedModule,
+    
   ],
   
   providers: [],

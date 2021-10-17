@@ -1,13 +1,12 @@
 <mat-sidenav-container>
     <mat-sidenav mode="side" [(opened)]="opened">
         <img src="./assets/img/logo.jpeg" width="75%">
-        <ul class="nav">
+        <ul class="menu-hover-fill flex flex-col items-start leading-none text-2xl uppercase space-y-4">
             <li *ngFor="let item of links" ><span><a routerLink={{item.link}}><i class="fas fa-chart-line"></i>{{item.name}}</a></span></li>
         </ul>
+        
     </mat-sidenav>
     <mat-sidenav-content>
-        <button (click)="opened=!opened" mat-stroked-button ><mat-icon>menu</mat-icon></button>
-        <router-outlet></router-outlet>
+        <router-outlet><button (click)="opened=!opened" mat-stroked-button ><mat-icon>menu</mat-icon></button></router-outlet>
     </mat-sidenav-content>
 </mat-sidenav-container>
-<div>Icons made by <a href="https://www.flaticon.com/authors/ariefstudio" title="ariefstudio">ariefstudio</a> from <a href="https://www.flaticon.com/" title="Flaticon">www.flaticon.com</a></div>

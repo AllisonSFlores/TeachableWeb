@@ -7,12 +7,14 @@ import { Component, Input, OnInit } from '@angular/core';
 })
 export class SidenavComponent implements OnInit {
   opened = false;
-  neww="/newsS";
   @Input() links!:any[];
-  //link=[{"name":"Login","link":"/login"},{"name":"Noticias","link":"/newsS"}];
+  //links=[{"name":"Login","link":"/login"},{"name":"Noticias","link":"/newsS"}];
   constructor() { }
 
   ngOnInit(): void {
   }
+  /*<ul class="nav">
+            <li *ngFor="let item of links" ><span><a routerLink={{item.link}}><i class="fas fa-chart-line"></i>{{item.name}}</a></span></li>
+        </ul>*/
 
 }

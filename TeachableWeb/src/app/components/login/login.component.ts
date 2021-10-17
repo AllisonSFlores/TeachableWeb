@@ -27,7 +27,7 @@ export class LoginComponent implements OnInit {
     const email = this.form.value.email;
     const pass = this.form.value.password;
     this.error();
-    this.router.navigate(['teacher']);
+    //this.router.navigate(['teacher']);
     console.log("ancldsan")
 
   }
