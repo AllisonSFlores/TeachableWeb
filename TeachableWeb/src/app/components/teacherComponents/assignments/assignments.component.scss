@@ -49,7 +49,7 @@
   .card {
     margin: 20px;
     padding: 20px;
-    width: 500px;
+    width: 480px;
     min-height: 200px;
     display: grid;
     grid-template-rows: 20px 50px 1fr 50px;
@@ -124,6 +124,9 @@
   }
 .ancho{
     width: 33%;
+}
+.anchoCompleto{
+  width: 100%;
 }
 .boton{
   width:15%;

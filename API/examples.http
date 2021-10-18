@@ -1,5 +1,5 @@
 ###
-POST http://localhost:3000/auth HTTP/1.1
+POST https://api-mongodbatlas.herokuapp.com/auth HTTP/1.1
 Content-Type: application/json
 
 {
@@ -8,7 +8,7 @@ Content-Type: application/json
 }
 
 ###
-POST http://localhost:3000/auth HTTP/1.1
+POST https://api-mongodbatlas.herokuapp.com/auth HTTP/1.1
 Content-Type: application/json
 
 {
@@ -18,7 +18,7 @@ Content-Type: application/json
 
 
 ###
-POST http://localhost:3000/auth HTTP/1.1
+POST https://api-mongodbatlas.herokuapp.com/auth HTTP/1.1
 Content-Type: application/json
 
 {
@@ -28,24 +28,23 @@ Content-Type: application/json
 }
 
 ###
-GET http://localhost:3000/users/user/Melvin HTTP/1.1
+GET https://api-mongodbatlas.herokuapp.com/users/user/Melvin HTTP/1.1
 Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VySWQiOiI2MTJlNWZmOGFmNjc3ZDhmNDczZDIzYzkiLCJlbWFpbCI6IkFsZWphbmRyYSIsInBlcm1pc3Npb25MZXZlbCI6NywicHJvdmlkZXIiOiJlbWFpbCIsIm5hbWUiOiJBbGVqYW5kcmEgR29uemFsZXMiLCJyZWZyZXNoS2V5IjoiRitYRDQvVGRDSERpczU3TCtDVkZhdz09IiwiaWF0IjoxNjMwNzk3NDQ1fQ.GPOnt_XJQrpIrE--ehcxL9mO5tS7vLYwhn-93YOywMo
 
 
 ###
-GET http://localhost:3000/courses/allcourses HTTP/1.1
+GET https://api-mongodbatlas.herokuapp.com/courses/allcourses HTTP/1.1
 Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VySWQiOiI2MTJlZmZkZTlkMGM5Mjc2NjA5OGUyY2YiLCJlbWFpbCI6Ik1lbHZpbiIsInBlcm1pc3Npb25MZXZlbCI6MjA0OCwicHJvdmlkZXIiOiJlbWFpbCIsIm5hbWUiOiJNZWx2aW4gU29sYW5vIiwicmVmcmVzaEtleSI6IlZpQlNtZHpDL0YxTitkd1JRNDAvK2c9PSIsImlhdCI6MTYzMTM5MDc4M30.5r3XM_vCAModPdE6n9l0qgIh80GCttkHWGrnzodQWio
 
 ###
 
-GET http://localhost:3000/getMyInfo HTTP/1.1
-Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VySWQiOiI2MTJlZmZkZTlkMGM5Mjc2NjA5OGUyY2YiLCJlbWFpbCI6Ik1lbHZpbiIsInBlcm1pc3Npb25MZXZlbCI6MjA0OCwicHJvdmlkZXIiOiJlbWFpbCIsIm5hbWUiOiJNZWx2aW4gU29sYW5vIiwicmVmcmVzaEtleSI6IkNNL2hpQllXWnUxSGZIRGx3VEQ4Smc9PSIsImlhdCI6MTYzMDk4ODg1OX0.pcHVzLK-5OUFLS3gp98dWyi4mLTOk9qcqqiynO51txw
+GET https://api-mongodbatlas.herokuapp.com/getMyInfo HTTP/1.1
+Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VySWQiOiI2MTJlZmZkZTlkMGM5Mjc2NjA5OGUyY2YiLCJlbWFpbCI6Ik1lbHZpbiIsInBlcm1pc3Npb25MZXZlbCI6MjA0OCwicHJvdmlkZXIiOiJlbWFpbCIsIm5hbWUiOiJNZWx2aW4gU29sYW5vIiwicmVmcmVzaEtleSI6IldUa2tDd0crSWFBYVJQek9uSHYxTWc9PSIsImlhdCI6MTYzNDUzMTc4MX0.EksY6qELYEpva3XBP6pQ_qDqBDvoCr2gSTylmRqae9c
+###
+GET https://api-mongodbatlas.herokuapp.com/612effde9d0c92766098e2cf HTTP/1.1
 
 ###
-GET http://localhost:3000/612effde9d0c92766098e2cf HTTP/1.1
-
-###
-POST http://localhost:3000/users HTTP/1.1
+POST https://api-mongodbatlas.herokuapp.com/users HTTP/1.1
 content-type: application/json
 Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VySWQiOiI2MTJlZmZkZTlkMGM5Mjc2NjA5OGUyY2YiLCJlbWFpbCI6Ik1lbHZpbiIsInBlcm1pc3Npb25MZXZlbCI6MjA0OCwicHJvdmlkZXIiOiJlbWFpbCIsInJlZnJlc2hLZXkiOiJxNnVmbGhJQ20wRENKVXBuUHhsN3FnPT0iLCJpYXQiOjE2MzA2NDI0NTV9.tIBNSy6y-lrRFTBlytPL94eI5iC4Lg6L9n6a6oZz698
 
@@ -61,7 +60,7 @@ Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VySWQiOiI2MTJlZ
 
 
 ###
-PATCH http://localhost:3000/users/612effde9d0c92766098e2cf HTTP/1.1
+PATCH https://api-mongodbatlas.herokuapp.com/users/612effde9d0c92766098e2cf HTTP/1.1
 content-type: application/json
 Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VySWQiOiI2MTJlZmZkZTlkMGM5Mjc2NjA5OGUyY2YiLCJlbWFpbCI6Ik1lbHZpbiIsInBlcm1pc3Npb25MZXZlbCI6MjA0OCwicHJvdmlkZXIiOiJlbWFpbCIsIm5hbWUiOiJNZWx2aW4gU29sYW5vIiwicmVmcmVzaEtleSI6IkZldG44SG0rbFBRN1IyNDhPU0IvbWc9PSIsImlhdCI6MTYzMTMxOTIxMX0.Ig-_G7psdPEC_10u3kpuhKOWlTkUg4hKXvIPSC4YCFo
 
@@ -73,14 +72,14 @@ Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VySWQiOiI2MTJlZ
 }
 
 ###
-DELETE  http://localhost:3000/users/612e9c26b0f647c30ee1f182 HTTP/1.1
+DELETE  https://api-mongodbatlas.herokuapp.com/users/612e9c26b0f647c30ee1f182 HTTP/1.1
 Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VySWQiOiI2MTJlZmZkZTlkMGM5Mjc2NjA5OGUyY2YiLCJlbWFpbCI6Ik1lbHZpbiIsInBlcm1pc3Npb25MZXZlbCI6MjA0OCwicHJvdmlkZXIiOiJlbWFpbCIsIm5hbWUiOiJNZWx2aW4gU29sYW5vIiwicmVmcmVzaEtleSI6Imh0RlhoVFptL0hjRVdxa3VabWVkeXc9PSIsImlhdCI6MTYzMTQyNTg2N30.fPmtIwT3NR6K4xpMUsdXv3VExhWG2ikrObY2J-OHumI
 
 
 
 
 ###
-POST http://localhost:3000/courses HTTP/1.1
+POST https://api-mongodbatlas.herokuapp.com/courses HTTP/1.1
 Content-Type: application/json
 Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VySWQiOiI2MTJlZmZkZTlkMGM5Mjc2NjA5OGUyY2YiLCJlbWFpbCI6Ik1lbHZpbiIsInBlcm1pc3Npb25MZXZlbCI6MjA0OCwicHJvdmlkZXIiOiJlbWFpbCIsInVzZXJUeXBlIjoxLCJyZWZyZXNoS2V5IjoiZmNRaWRCeEkxT3duamNiV2Q4NEx2dz09IiwiaWF0IjoxNjMwNTUzMTA0fQ.6bCLNmu17fmxsrwYHHLB-U0mnswrRJveYDy33rSk4EM
 
@@ -105,10 +104,10 @@ Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VySWQiOiI2MTJlZ
 
 
 ###
-GET http://localhost:3000/courses/612fff670dd9995aa14b641b HTTP/1.1
+GET https://api-mongodbatlas.herokuapp.com/courses/612fff670dd9995aa14b641b HTTP/1.1
 
 ###
-PATCH http://localhost:3000/courses/61304994bc3b64ccc37583e3 HTTP/1.1
+PATCH https://api-mongodbatlas.herokuapp.com/courses/61304994bc3b64ccc37583e3 HTTP/1.1
 Content-Type: application/json
 Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VySWQiOiI2MTJlZmZkZTlkMGM5Mjc2NjA5OGUyY2YiLCJlbWFpbCI6Ik1lbHZpbiIsInBlcm1pc3Npb25MZXZlbCI6MjA0OCwicHJvdmlkZXIiOiJlbWFpbCIsInVzZXJUeXBlIjoxLCJyZWZyZXNoS2V5IjoiZk44L0FyUnBsMkU0SU5hTUUrYU02Zz09IiwiaWF0IjoxNjMwNTU0NDc2fQ.onrUmYYh43nDlxKtvUNm7ExVk5AfCsGLx7_k2OI_Hvg
 
@@ -120,7 +119,7 @@ Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VySWQiOiI2MTJlZ
 }
 
 ###
-PATCH http://localhost:3000/courses/newStudent/612fff670dd9995aa14b641b HTTP/1.1
+PATCH https://api-mongodbatlas.herokuapp.com/courses/newStudent/612fff670dd9995aa14b641b HTTP/1.1
 Content-Type: application/json
 Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VySWQiOiI2MTJlZmZkZTlkMGM5Mjc2NjA5OGUyY2YiLCJlbWFpbCI6Ik1lbHZpbiIsInBlcm1pc3Npb25MZXZlbCI6MjA0OCwicHJvdmlkZXIiOiJlbWFpbCIsInJlZnJlc2hLZXkiOiIzWTlKUU5OZFYwQmt6WUl5a1lGTmJBPT0iLCJpYXQiOjE2MzA2NDI5NjN9.yKiERlEJsGoJMHHDrka-dw2yTYg4sbNUsP0wC0lyp_w
 
@@ -136,7 +135,7 @@ Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VySWQiOiI2MTJlZ
 }
 
 ###
-PATCH http://localhost:3000/courses/newTeacher/612fff670dd9995aa14b641b HTTP/1.1
+PATCH https://api-mongodbatlas.herokuapp.com/courses/newTeacher/612fff670dd9995aa14b641b HTTP/1.1
 Content-Type: application/json
 Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VySWQiOiI2MTJlZmZkZTlkMGM5Mjc2NjA5OGUyY2YiLCJlbWFpbCI6Ik1lbHZpbiIsInBlcm1pc3Npb25MZXZlbCI6MjA0OCwicHJvdmlkZXIiOiJlbWFpbCIsInJlZnJlc2hLZXkiOiJlK2dtYmM0Q3lBbHVhQWxqK3RUYkpnPT0iLCJpYXQiOjE2MzA2MzMyMDJ9.wjOh-HVDlRlxsD3g5YWwBbikKXG5Db2kT1I9ArWTmoU
 
@@ -152,7 +151,7 @@ Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VySWQiOiI2MTJlZ
 }
 
 ###
-PATCH http://localhost:3000/courses/newAssignment/612fff670dd9995aa14b641b HTTP/1.1
+PATCH https://api-mongodbatlas.herokuapp.com/courses/newAssignment/612fff670dd9995aa14b641b HTTP/1.1
 Content-Type: application/json
 Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VySWQiOiI2MTJlNWZmOGFmNjc3ZDhmNDczZDIzYzkiLCJlbWFpbCI6IkFsZWphbmRyYSBHb256YWxlcyIsInBlcm1pc3Npb25MZXZlbCI6NywicHJvdmlkZXIiOiJlbWFpbCIsInJlZnJlc2hLZXkiOiJCcW9WbjhMd1o5ZENFelNOZ05IdkhnPT0iLCJpYXQiOjE2MzA2MzU3NzR9.78PSMq8N4jkVeZk66FC_QlYEn8FphLu17uBxrhSTKpE
 
@@ -164,7 +163,7 @@ Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VySWQiOiI2MTJlN
 }
 
 ###
-PATCH http://localhost:3000/courses/newNew/612fff670dd9995aa14b641b HTTP/1.1
+PATCH https://api-mongodbatlas.herokuapp.com/courses/newNew/612fff670dd9995aa14b641b HTTP/1.1
 Content-Type: application/json
 Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VySWQiOiI2MTJlZmZkZTlkMGM5Mjc2NjA5OGUyY2YiLCJlbWFpbCI6Ik1lbHZpbiIsInBlcm1pc3Npb25MZXZlbCI6MjA0OCwicHJvdmlkZXIiOiJlbWFpbCIsInJlZnJlc2hLZXkiOiJuRkM5SzBEcC9HVVZic0hLbHh4cExRPT0iLCJpYXQiOjE2MzA2MjA0MjB9.EMgf1tORC0Y0eEo9TpX41T4bFT_3PsgPiAfOtdcpijk
 
@@ -174,7 +173,7 @@ Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VySWQiOiI2MTJlZ
 }
 
 ###
-PATCH http://localhost:3000/courses/chat/612fff670dd9995aa14b641b HTTP/1.1
+PATCH https://api-mongodbatlas.herokuapp.com/courses/chat/612fff670dd9995aa14b641b HTTP/1.1
 Content-Type: application/json
 Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VySWQiOiI2MTJlNTgzNWFmNjc3ZDhmNDczZDIzYzciLCJlbWFpbCI6ImNhcmxvcyIsInBlcm1pc3Npb25MZXZlbCI6MSwicHJvdmlkZXIiOiJlbWFpbCIsIm5hbWUiOiJDYXJsb3MgQmFkaWxsYSIsInJlZnJlc2hLZXkiOiJMVE1QSERjK2xudjZOZWVwR1lQNzl3PT0iLCJpYXQiOjE2MzA2MjEzNjh9.1qkYQpcCS5GcJmjA0xymSipwQed9wVzUHnbLaT1vMFo
 
@@ -186,19 +185,19 @@ Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VySWQiOiI2MTJlN
 
 
 ###
-DELETE http://localhost:3000/courses/61304441fe4da48f352ad7a0 HTTP/1.1
+DELETE https://api-mongodbatlas.herokuapp.com/courses/61304441fe4da48f352ad7a0 HTTP/1.1
 Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VySWQiOiI2MTJlZmZkZTlkMGM5Mjc2NjA5OGUyY2YiLCJlbWFpbCI6Ik1lbHZpbiIsInBlcm1pc3Npb25MZXZlbCI6MjA0OCwicHJvdmlkZXIiOiJlbWFpbCIsInVzZXJUeXBlIjoxLCJyZWZyZXNoS2V5IjoicGxJUzh5SFFackhBSFlpSWpYZ0R0UT09IiwiaWF0IjoxNjMwNTQzNTY3fQ.eMV27VJfk911Ne5-dGLmQKdh-RCmCA5INIR7SW3FM8U
 
 
 ###
-GET http://localhost:3000/courses/assignment/612fff670dd9995aa14b641b HTTP/1.1
+GET https://api-mongodbatlas.herokuapp.com/courses/assignment/612fff670dd9995aa14b641b HTTP/1.1
 Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VySWQiOiI2MTJlNTgzNWFmNjc3ZDhmNDczZDIzYzciLCJlbWFpbCI6ImNhcmxvcyIsInBlcm1pc3Npb25MZXZlbCI6MSwicHJvdmlkZXIiOiJlbWFpbCIsIm5hbWUiOiJDYXJsb3MgQmFkaWxsYSIsInJlZnJlc2hLZXkiOiJkOHdnWE5KNmMwRjlXbHFDUzZhdHlBPT0iLCJpYXQiOjE2MzA2NDA0ODR9.egYm-_T2McGEo-LYUIPr1ItDMDy4dWafdNT0qH1mCwI
 
 ###
-GET http://localhost:3000/courses/news/612fff670dd9995aa14b641b HTTP/1.1
+GET https://api-mongodbatlas.herokuapp.com/courses/news/612fff670dd9995aa14b641b HTTP/1.1
 Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VySWQiOiI2MTJlNTgzNWFmNjc3ZDhmNDczZDIzYzciLCJlbWFpbCI6ImNhcmxvcyIsInBlcm1pc3Npb25MZXZlbCI6MSwicHJvdmlkZXIiOiJlbWFpbCIsIm5hbWUiOiJDYXJsb3MgQmFkaWxsYSIsInJlZnJlc2hLZXkiOiJkOHdnWE5KNmMwRjlXbHFDUzZhdHlBPT0iLCJpYXQiOjE2MzA2NDA0ODR9.egYm-_T2McGEo-LYUIPr1ItDMDy4dWafdNT0qH1mCwI
 
 ###
-GET http://localhost:3000/courses/chat/612fff670dd9995aa14b641b HTTP/1.1
+GET https://api-mongodbatlas.herokuapp.com/courses/chat/612fff670dd9995aa14b641b HTTP/1.1
 Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VySWQiOiI2MTJlNTgzNWFmNjc3ZDhmNDczZDIzYzciLCJlbWFpbCI6ImNhcmxvcyIsInBlcm1pc3Npb25MZXZlbCI6MSwicHJvdmlkZXIiOiJlbWFpbCIsIm5hbWUiOiJDYXJsb3MgQmFkaWxsYSIsInJlZnJlc2hLZXkiOiJUeG0rMkR2YWN4Z0twSzM3eEhvSStnPT0iLCJpYXQiOjE2MzA2NDEzMjB9.6gGIaoR7mfLewVL2PGPCD_Xn9xehuFkr9zsUELWU2cU
 
