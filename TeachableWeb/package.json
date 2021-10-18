@@ -3,13 +3,20 @@
   "version": "0.0.0",
   "scripts": {
     "ng": "ng",
-    "start": "ng serve",
+    "start": "node server.js",
     "build": "ng build",
     "watch": "ng build --watch --configuration development",
-    "test": "ng test"
+    "test": "ng test",
+    "heruko-postbuild": "ng build --prod"
+  },
+  "engines": {
+    "node": "14.16.0",
+    "npm":"6.14.11"
   },
   "private": true,
   "dependencies": {
+    "@angular/cli": "~12.2.10",
+    "@angular/compiler-cli": "~12.2.0",
     "@angular/animations": "~12.2.0",
     "@angular/cdk": "^12.2.9",
     "@angular/common": "~12.2.0",
@@ -22,7 +29,8 @@
     "@angular/router": "~12.2.0",
     "rxjs": "~6.6.0",
     "tslib": "^2.3.0",
-    "zone.js": "~0.11.4"
+    "zone.js": "~0.11.4",
+    "typescript": "~4.3.5"
   },
   "devDependencies": {
     "@angular-devkit/build-angular": "~12.2.10",
