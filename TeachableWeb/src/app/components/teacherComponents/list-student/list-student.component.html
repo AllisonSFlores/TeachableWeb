@@ -5,19 +5,15 @@
 		<div class="table-header">
 			<div class="header__item"><a id="name" class="filter__link" >Cédula</a></div>
 			<div class="header__item"><a id="wins" class="filter__link filter__link--number" >Nombre</a></div>
-			<div class="header__item"><a id="draws" class="filter__link filter__link--number" >Email</a></div>
 		</div>
 		<div class="table-content">	
-			<div class="table-row" *ngFor="let item of list">		
-				<div class="table-data">{{item.id_card}}</div>
-				<div class="table-data">{{item.name}}</div>
-				<div class="table-data">{{item.email}}</div>
+			<div class="table-row" *ngFor="let item of list">
+				<div class="table-data">{{item._id}}</div>
+				<div class="table-data" >{{item.name}}</div>
 			</div>
 		</div>	
 	</div>
     
 </div>
-<div>
-    <button type="button" style="margin:10px" class="btn btn-primary" (click)="imprimirList()">IMPRIMIR</button>
-</div>
+
 </app-sidenav>

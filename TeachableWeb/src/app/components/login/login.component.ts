@@ -49,7 +49,7 @@ export class LoginComponent implements OnInit {
 
   getType(token:string){
     this.dataService.setToken(token);
-    this.loginService.getType(token).subscribe(
+    this.loginService.getMyInfo().subscribe(
       (res)=>{
         switch(res.permissionLevel){
           case 2048:
@@ -57,7 +57,7 @@ export class LoginComponent implements OnInit {
             break;
           case 7:
             console.log("Es un profesor");
-            this.router.navigate(['teacher']);
+            this.router.navigate(['listCourses']);
             break;
           default:
             console.log("Estudiante")

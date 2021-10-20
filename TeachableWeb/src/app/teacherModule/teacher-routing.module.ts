@@ -8,9 +8,9 @@ import { ChatComponent } from '../components/teacherComponents/chat/chat.compone
 
 const routes: Routes = [
   {path:'',component:TeacherComponent},
-  {path: 'newsT',component:NewsComponent},
-  {path: 'assigmentsT',component:AssignmentsComponent},
-  {path: 'listStudenT',component:ListStudentComponent},
+  {path: 'newsT/:id',component:NewsComponent},
+  {path: 'assigmentsT/:id',component:AssignmentsComponent},
+  {path: 'listStudenT/:id',component:ListStudentComponent},
   {path: 'chat', component:ChatComponent}
 ];
 

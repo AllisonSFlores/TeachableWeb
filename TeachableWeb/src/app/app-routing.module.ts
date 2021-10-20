@@ -1,11 +1,12 @@
 import { NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
+import { ListCoursesComponent } from './components/list-courses/list-courses.component';
 import { LoginComponent } from './components/login/login.component';
 import { TeacherModule } from './teacherModule/teacher.module';
 const routes: Routes = [
-  //{path:'', component:SidenavComponent},
-  {path:'teacher', loadChildren: () => import ('./teacherModule/teacher.module').then(x => x.TeacherModule)},
-  {path: 'login', component:LoginComponent}
+  {path:'teacher/:id', loadChildren: () => import ('./teacherModule/teacher.module').then(x => x.TeacherModule)},
+  {path: 'login', component:LoginComponent},
+  {path: 'listCourses',component:ListCoursesComponent}
 ];
 
 @NgModule({

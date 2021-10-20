@@ -1,5 +1,8 @@
 import { Component, OnInit } from '@angular/core';
 import { FormBuilder, FormGroup, Validators } from '@angular/forms';
+import { MatSnackBar } from '@angular/material/snack-bar';
+import { ActivatedRoute } from '@angular/router';
+import { TeacherService } from 'src/app/services/teacher.service';
 
 @Component({
   selector: 'app-news',
@@ -7,18 +10,21 @@ import { FormBuilder, FormGroup, Validators } from '@angular/forms';
   styleUrls: ['./news.component.scss']
 })
 export class NewsComponent implements OnInit {
-  news=[{"title":"Bienvenida",
-  "description":"Bienvenidos al curso de estructuras, espero les guste mucho. Nos vemos..."},
-  {"title":"Info de primer clase",
-  "description":"Deben enviarme un correo para agregarlos a las lista de google"}
-  ];
-  a=[{"name":"Noticias","link":"/teacher/newsT"},
-    {"name":"Salir","link":"/login"},
-    {"name":"Tareas","link":"/teacher/assigmentsT"},
-    {"name":"Estudiantes","link":"/teacher/listStudenT"}];
   form :FormGroup;
+  id =this.rutaActiva.snapshot.params.id;
+  news=[{"title":"Bienvenida",
+  "description":"Nos vemos..."}
+  ];
+  a=[{"name":"Noticias","link":`/teacher/${this.id}/newsT/${this.id}`},
+    {"name":"Salir","link":"/login"},
+    {"name":"Tareas","link":`/teacher/${this.id}/assigmentsT/${this.id}`},
+    {"name":"Estudiantes","link":`/teacher/${this.id}/listStudenT/${this.id}`}];
+  
   constructor(
     private formBuilder: FormBuilder,
+    private rutaActiva: ActivatedRoute,
+    private teacherService: TeacherService,
+    private _snackBar: MatSnackBar,
   ) {
     this.form=this.formBuilder.group({
       tittle:['',Validators.required],
@@ -27,18 +33,33 @@ export class NewsComponent implements OnInit {
    }
 
   ngOnInit(): void {
+    const id =this.rutaActiva.snapshot.params.id;
+    this.getNews();
   }
-  agregar(){
+  newNews(){
     const tittle = this.form.value.tittle;
     const des = this.form.value.description;
-    console.log("Falta enviar esto a la base",tittle,des);
-    this.news=[{"title":"Bienvenida",
-              "description":"Bienvenidos al curso de estructuras, espero les guste mucho. Nos vemos..."},
-              {"title":"Info de primer clase",
-              "description":"Deben enviarme un correo para agregarlos a las lista de google"},
-              {"title":tittle,
-              "description":"Falta enviar a la base de datos"}
-  ];
+    this.teacherService.newNews(tittle,des,this.id).subscribe(
+      (res)=>{
+        this.getNews();
+        console.log(res);
+        this.messageCofirm()
+      },
+      (err)=>{console.log(err)});
+  }
+  getNews(){
+    this.teacherService.getNews(this.id).subscribe(
+      (res)=>{
+        console.log(res[0].news);
+        this.news=res[0].news;
+      },
+      (err)=>{console.log(err)});
+  }
+  messageCofirm(){
+    this._snackBar.open('Noticia agregada','',{
+      duration: 5000,
+      horizontalPosition: 'center',
+      verticalPosition: 'bottom'})
   }
 
 }

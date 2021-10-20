@@ -9,7 +9,8 @@ import { DataService } from './data.service';
 export class LoginService {
   API_URL='https://api-mongodbatlas.herokuapp.com/'
   constructor(
-    private http:HttpClient
+    private http:HttpClient,
+    private dataService:DataService
     ) { }
   login(email:String, password:String):Observable<any>{
     return this.http.post(`${this.API_URL}auth`,
@@ -18,7 +19,7 @@ export class LoginService {
       "password":password
     });
   }
-  getType(token:string):Observable<any>{
-    return this.http.get(`${this.API_URL}getMyInfo`,{"headers": {"Authorization":`Bearer ${token}`}})
+  getMyInfo():Observable<any>{
+    return this.http.get(`${this.API_URL}getMyInfo`,{"headers": {"Authorization":`Bearer ${this.dataService.getToken()}`}})
   }
 }

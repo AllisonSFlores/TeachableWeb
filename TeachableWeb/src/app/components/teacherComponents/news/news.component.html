@@ -5,7 +5,7 @@
           <h1 class="heading__title">Noticias del curso</h1>
         </div>
         <div>
-            <form [formGroup]="form" (ngsubmit)="agregar()">
+            <form [formGroup]="form" (ngsubmit)="newNews()">
                 <h3>Nueva noticia</h3>
                 <mat-form-field class="ancho" appearance="fill">
                     <mat-label>Título</mat-label>
@@ -15,7 +15,7 @@
                     <mat-label>Descripción</mat-label>
                     <input matInput formControlName="description" type="text">
                 </mat-form-field>
-                <button mat-raised-button  (click)="agregar()" [disabled]="form.invalid" class="boton" >Agregar</button>
+                <button mat-raised-button  (click)="newNews()" [disabled]="form.invalid" class="boton" >Agregar</button>
             </form>
         </div>
         <div class="cards">

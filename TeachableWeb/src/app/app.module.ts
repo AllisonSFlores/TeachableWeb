@@ -10,11 +10,13 @@ import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 //componentes
 import { LoginComponent } from './components/login/login.component';
 import { HttpClientModule } from '@angular/common/http';
+import { ListCoursesComponent } from './components/list-courses/list-courses.component';
 
 @NgModule({
   declarations: [
     AppComponent,
     LoginComponent,
+    ListCoursesComponent,
   ],
   imports: [
     BrowserModule,

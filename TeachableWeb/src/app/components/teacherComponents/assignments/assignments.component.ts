@@ -16,12 +16,12 @@ export class AssignmentsComponent implements OnInit {
     "description":"Deben enviarme un correo para agregarlos a las lista de google",
     "deadline":"12"}
     ];
-    a=[{"name":"Noticias","link":"/teacher/newsT"},
+    id =this.rutaActiva.snapshot.params.id;
+    a=[{"name":"Noticias","link":`/teacher/${this.id}/newsT/${this.id}`},
     {"name":"Salir","link":"/login"},
-    {"name":"Tareas","link":"/teacher/assigmentsT"},
-    {"name":"Estudiantes","link":"/teacher/listStudenT"}];
+    {"name":"Tareas","link":`/teacher/${this.id}/assigmentsT/${this.id}`},
+    {"name":"Estudiantes","link":`/teacher/${this.id}/listStudenT/${this.id}`}];
   form :FormGroup;
-  id=(this.rutaActiva.snapshot.params).toString();
   constructor(
     private formBuilder: FormBuilder,
     private rutaActiva: ActivatedRoute,
@@ -37,7 +37,6 @@ export class AssignmentsComponent implements OnInit {
    }
 
   ngOnInit(): void {
-    this.id="612fff670dd9995aa14b641b"
     this.getAssigments();
     
   }

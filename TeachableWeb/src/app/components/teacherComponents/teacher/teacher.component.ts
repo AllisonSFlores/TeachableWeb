@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { ActivatedRoute, Params } from '@angular/router';
 
 @Component({
   selector: 'app-teacher',
@@ -6,13 +7,18 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./teacher.component.scss']
 })
 export class TeacherComponent implements OnInit {
-  a=[{"name":"Noticias","link":"/teacher/newsT"},
-    {"name":"Salir","link":"/teacher/login"},
-    {"name":"Tareas","link":"/teacher/assigmentsT"},
-    {"name":"Estudiantes","link":"/teacher/listStudenT"}];
-  constructor() { }
+  a=[{}];
+  constructor(
+    private rutaActiva: ActivatedRoute
+  ) { 
+  }
 
   ngOnInit(): void {
+    const id =this.rutaActiva.snapshot.params.id;
+    this.a=[{"name":"Noticias","link":`/teacher/${id}/newsT/${id}`},
+    {"name":"Salir","link":"/teacher/login"},
+    {"name":"Tareas","link":`/teacher/${id}/assigmentsT/${id}`},
+    {"name":"Estudiantes","link":`/teacher/${id}/listStudenT/${id}`}]
   }
 
 }
