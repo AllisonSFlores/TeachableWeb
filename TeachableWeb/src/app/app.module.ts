@@ -19,13 +19,14 @@ import { UpdateCourseComponent } from './components/admin/manage-courses/update-
 import { ManageStudentComponent } from './components/admin/manage-courses/manage-student/manage-student.component';
 import { InsertUserComponent } from './components/admin/manage-users/insert-user/insert-user.component';
 import { UpdateUserComponent } from './components/admin/manage-users/update-user/update-user.component';
+import { ListCoursesComponent } from './components/list-courses/list-courses.component';
 
 
 @NgModule({
   declarations: [
     AppComponent,
     LoginComponent,
-
+    ListCoursesComponent,
     FunctionsComponent,
     ManageCoursesComponent,
     ManageUsersComponent,
