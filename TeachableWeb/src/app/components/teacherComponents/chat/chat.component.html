@@ -1,2 +1,8 @@
-<app-sidenav [links]=a><app-chat-box></app-chat-box></app-sidenav>
+<app-sidenav [links]=a><app-chat-box [messages]=messages ></app-chat-box>
+    <form class="chatbox__messages__user-message--ind-message" [formGroup]="form" (ngsubmit)="sendMessage()">
+        <input type="text" formControlName="message" placeholder="Enter your message">
+        <button mat-raised-button  (click)="sendMessage()" [disabled]="form.invalid" class="boton" >Enviar</button>
+    </form>
+</app-sidenav>
+
 

@@ -18,7 +18,8 @@ export class NewsComponent implements OnInit {
   a=[{"name":"Noticias","link":`/teacher/${this.id}/newsT/${this.id}`},
     {"name":"Salir","link":"/login"},
     {"name":"Tareas","link":`/teacher/${this.id}/assigmentsT/${this.id}`},
-    {"name":"Estudiantes","link":`/teacher/${this.id}/listStudenT/${this.id}`}];
+    {"name":"Estudiantes","link":`/teacher/${this.id}/listStudenT/${this.id}`},
+    {"name":"Chat","link":`/teacher/${this.id}/chat/${this.id}`}];
   
   constructor(
     private formBuilder: FormBuilder,

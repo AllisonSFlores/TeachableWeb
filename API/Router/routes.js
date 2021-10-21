@@ -148,6 +148,7 @@ exports.routesConfig = function(app) {
         PermissionMiddleware.minimumPermissionLevelRequired(config.STUDENT_PERMISSION),
         CourseController.getChat
     ]);
+    
 
 
 

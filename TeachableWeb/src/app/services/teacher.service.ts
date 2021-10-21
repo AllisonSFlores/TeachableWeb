@@ -37,12 +37,30 @@ export class TeacherService {
     "title":title,
     "description":des},
     {"headers": {"Authorization":`Bearer ${this.data.getToken()}`}})
-  };
+  }
+
   getStudents(idCourse:string):Observable<any>{
     return this.http.get(`${this.API_URL}courses/${idCourse}`);
   }
+
   getStudentsAux(idUser:string):Observable<any>{
+    console.log("servicio"+idUser);
     return this.http.get(`${this.API_URL}${idUser}`);
+  }
+  
+    //angular otro paquete
+    //multer
+  getChat(idCourse:string):Observable<any>{
+    return this.http.get(`${this.API_URL}courses/chat/${idCourse}`,{"headers":{"Authorization":`Bearer ${this.data.getToken()}`}});
+  }
+
+  newMessage(idCourse:string,message:string,time:string):Observable<any>{
+    return this.http.patch(`${this.API_URL}courses/chat/${idCourse}`,
+    {
+      "writer":"",
+      "message":message,
+      "time":time},
+      {"headers":{"Authorization":`Bearer ${this.data.getToken()}`}});
   }
   
 

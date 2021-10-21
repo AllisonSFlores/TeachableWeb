@@ -3,13 +3,12 @@
       <div class="chatbox__messages" *ngFor="let message of messages">
         <div class="chatbox__messages__user-message">
           <div class="chatbox__messages__user-message--ind-message">
-            <p class="name">{{message.Name}}</p>
+            <p class="name">{{message.writer}}</p>
             <br/>
-            <p class="message">{{message.Message}}</p>
+            <p class="message">{{message.message}}</p>
+            <p class="message">{{message.time}}</p>
           </div>
         </div>
       </div>
-      <form>
-        <input type="text" placeholder="Enter your message">
-      </form>
+      
     </div>

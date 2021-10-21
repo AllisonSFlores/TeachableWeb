@@ -15,14 +15,13 @@ export class ListCoursesComponent implements OnInit {
     private loginService:LoginService,
     private _snackBar: MatSnackBar,
     private router:Router
-    ) {
-    
-   }
+    ) {   }
 
   ngOnInit(): void {
     this.typeUser="7";
     this.navigateTo("612fff670dd9995aa14b641b");
   }
+
   setList(){
     this.loginService.getMyInfo().subscribe(
       (res)=>{
@@ -31,12 +30,14 @@ export class ListCoursesComponent implements OnInit {
       },
       (err)=>{this.error()})
   }
+
   error(){
     this._snackBar.open('Problemas al cargar los datos','',{
       duration: 5000,
       horizontalPosition: 'center',
       verticalPosition: 'bottom'})
   }
+
   navigateTo(idCourse:string){
     switch(Number(this.typeUser)){
       case 7:
@@ -45,8 +46,7 @@ export class ListCoursesComponent implements OnInit {
         break;
       default:
         console.log("Estudiante")
-    }
+    } 
   }
-
 
 }
