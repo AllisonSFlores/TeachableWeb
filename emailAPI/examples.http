@@ -1,0 +1,19 @@
+###
+POST http://localhost:3000/send HTTP/1.1
+Content-Type: application/json
+
+{"email":"allllllll"}
+
+###
+POST https://api-mongodbatlads.herokuapp.com/users HTTP/1.1
+content-type: application/json
+Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VySWQiOiI2MTJlZmZkZTlkMGM5Mjc2NjA5OGUyY2YiLCJlbWFpbCI6Ik1lbHZpbiIsInBlcm1pc3Npb25MZXZlbCI6MjA0OCwicHJvdmlkZXIiOiJlbWFpbCIsInJlZnJlc2hLZXkiOiJxNnVmbGhJQ20wRENKVXBuUHhsN3FnPT0iLCJpYXQiOjE2MzA2NDI0NTV9.tIBNSy6y-lrRFTBlytPL94eI5iC4Lg6L9n6a6oZz698
+
+{
+    "email": "Allison",
+    "password": "Allisonpw",
+    "permissionLevel": 1,
+    "name":"Allison Solano",
+    "id_card":"32654",
+    "level":6
+}

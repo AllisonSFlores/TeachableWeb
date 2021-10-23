@@ -5,8 +5,6 @@ import { HttpClient } from '@angular/common/http';
 })
 export class DataService {
   token="";
-  API_URL='https://api-mongodbatlas.herokuapp.com/';
-  permissionLevel=0;
   constructor(
     private http:HttpClient,
   ) { }

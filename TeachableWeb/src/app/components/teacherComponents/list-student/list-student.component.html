@@ -1,7 +1,8 @@
 <app-sidenav [links]=a>
+	<button (click)=imprimir()> Enviar a correo</button>
 <div class="container">
 	
-	<div class="table">
+	<div class="table" id="htmlData">
 		<div class="table-header">
 			<div class="header__item"><a id="name" class="filter__link" >Cédula</a></div>
 			<div class="header__item"><a id="wins" class="filter__link filter__link--number" >Nombre</a></div>
@@ -14,7 +15,9 @@
 				<button (click)=getStudents(item._id)> Detalles</button>
 			</div>
 		</div>	
+		
 	</div>
+	
     
 </div>
 

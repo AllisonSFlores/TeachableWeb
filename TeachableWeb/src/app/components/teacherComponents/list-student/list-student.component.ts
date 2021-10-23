@@ -2,7 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import { MatSnackBar } from '@angular/material/snack-bar';
 import { ActivatedRoute } from '@angular/router';
 import { TeacherService } from 'src/app/services/teacher.service';
-
+import { EmailService } from 'src/app/services/email.service';
 @Component({
   selector: 'app-list-student',
   templateUrl: './list-student.component.html',
@@ -21,6 +21,7 @@ export class ListStudentComponent implements OnInit {
     private rutaActiva: ActivatedRoute,
     private teacherService: TeacherService,
     private _snackBar: MatSnackBar,
+    private emailService:EmailService
   ) {
     this.getStudentsAux();
    }
@@ -30,8 +31,6 @@ export class ListStudentComponent implements OnInit {
   ngOnInit(): void {
    this.getStudentsAux();
     
-  }
-  imprimirList(){
   }
   getStudentsAux(){
     this.teacherService.getStudents(this.id).subscribe(
@@ -54,6 +53,21 @@ export class ListStudentComponent implements OnInit {
           console.log(err);
         })
   }
+
+  imprimir(){
+    const DATA = document.getElementById('htmlData');
+    if (DATA != null){
+      this.emailService.openPDF(DATA).subscribe(
+        (res)=>{
+          console.log("Respuesta "+res)
+        },
+        (err)=>{
+          console.log(err);
+        });
+    }
+    
+  }
+
   messageEmail(email:string){
     this._snackBar.open(`El correo del estudiante es ${email}`,'',{
       duration: 5000,
