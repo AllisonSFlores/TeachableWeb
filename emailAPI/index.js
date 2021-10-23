@@ -1,7 +1,7 @@
 var express = require('express');
 var app = express();
 const bodyParser = require('body-parser');
-const transporte = require('./config/transporterconfig');
+const transporter = require('./config/transporterconfig');
 const multer = require('multer');
 //config
 app.use(bodyParser.json());
@@ -31,15 +31,6 @@ app.post('/',upload.single('file'),(req,res)=>{});
 //ruta
 app.post("/send",[
 (req,res)=>{
-    let transporter = nodemailer.createTransport({
-        host: "smtp.gmail.com",
-        port: 465,
-        secure: true, 
-        auth: {
-          user: "teachableap@gmail.com",
-          pass: "scrkcigbeebvnxxg",
-        },
-      });
       
     var mailOptions ={
         from:"Teachable <teachableap@gmail.com>",
@@ -51,7 +42,7 @@ app.post("/send",[
                 path:'./documents/ListaEstudiantes.pdf'
             }]
     }
-    transporter.sendMail(mailOptions,(error,info)=>{
+    transporter.transporter.sendMail(mailOptions,(error,info)=>{
         if(error){
             console.log(error)
             res.status(500).jsonp(error.message);

@@ -1,12 +1,13 @@
 <app-sidenav [links]=a>
-	<button (click)=imprimir()> Enviar a correo</button>
+	
 <div class="container">
 	
 	<div class="table" id="htmlData">
 		<div class="table-header">
 			<div class="header__item"><a id="name" class="filter__link" >Cédula</a></div>
 			<div class="header__item"><a id="wins" class="filter__link filter__link--number" >Nombre</a></div>
-			<div class="header__item"><a id="wins" class="filter__link filter__link--number" >Detalles</a></div>
+
+			<button (click)=imprimir() > <img src="./assets/img/downloadfile.png" width="75%"></button>
 		</div>
 		<div class="table-content">	
 			<div class="table-row" *ngFor="let item of list">
@@ -20,5 +21,5 @@
 	
     
 </div>
-
+<div>Icons made by <a href="https://www.flaticon.com/authors/kiranshastry" title="Kiranshastry">Kiranshastry</a> from <a href="https://www.flaticon.com/" title="Flaticon">www.flaticon.com</a></div>
 </app-sidenav>
