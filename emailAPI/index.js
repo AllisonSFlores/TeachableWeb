@@ -1,8 +1,10 @@
 var express = require('express');
-const bodyParser = require('body-parser');
-var nodemailer = require('nodemailer');
 var app = express();
-
+const bodyParser = require('body-parser');
+const transporte = require('./config/transporterconfig');
+const multer = require('multer');
+//config
+app.use(bodyParser.json());
 app.use(function (req, res, next) {
     res.header('Access-Control-Allow-Origin', '*');
     res.header('Access-Control-Allow-Credentials', 'true');
@@ -15,9 +17,18 @@ app.use(function (req, res, next) {
         return next();
     }
 });
+//multer
+const storage = multer.diskStorage({
+    destination:'./documents',
+    filename:function(req,file,cb){
+        cb(null,'ListaEstudiantes.'+file.mimetype.split('/')[1])
+    }
+})
+const upload = multer({storage:storage});
+app.post('/',upload.single('file'),(req,res)=>{});
 
-app.use(bodyParser.json());
 
+//ruta
 app.post("/send",[
 (req,res)=>{
     let transporter = nodemailer.createTransport({
@@ -33,11 +44,11 @@ app.post("/send",[
     var mailOptions ={
         from:"Teachable <teachableap@gmail.com>",
         to: req.body.email,
-        subject:"Prueba desde techableWeb",
-        text:"Mundo",
+        subject:"Lista techableWeb",
+        text:"Lista de estudiantes del curso solicitado",
         attachments: [
             {   
-                path:'./documents/index.txt'
+                path:'./documents/ListaEstudiantes.pdf'
             }]
     }
     transporter.sendMail(mailOptions,(error,info)=>{

@@ -57,13 +57,7 @@ export class ListStudentComponent implements OnInit {
   imprimir(){
     const DATA = document.getElementById('htmlData');
     if (DATA != null){
-      this.emailService.openPDF(DATA).subscribe(
-        (res)=>{
-          console.log("Respuesta "+res)
-        },
-        (err)=>{
-          console.log(err);
-        });
+      this.emailService.openPDF(DATA)
     }
     
   }

@@ -14,12 +14,8 @@ export class EmailService {
   ) { }
 
 
-  openPDF(DATA:HTMLElement):Observable<any> {
-    console.log(`http://localhost:3000/send`);
-    return this.http.post(`http://localhost:3000/send`,
-    {"email":"allissolanof2@gmail.com"
-  });
-    /*html2canvas(DATA).then(canvas => {
+  openPDF(DATA:HTMLElement) {
+    html2canvas(DATA).then(canvas => {
         let fileWidth = 208;
         let fileHeight = canvas.height * fileWidth / canvas.width;
         
@@ -28,10 +24,14 @@ export class EmailService {
         let position = 0;
         PDF.addImage(FILEURI, 'PNG', 0, position, fileWidth, fileHeight)
 
-        let fd = new FormData(PDF.getFormObject('HTMLData'));
-        fd.append('file',PDF.output('blob'));
-        
-    }); */
+        let fd = new FormData();
+        fd.set('file',PDF.output('blob'));
+        this.http.post(`http://localhost:3000/`, fd).subscribe(res => {console.log(res)});
+        this.http.post(`http://localhost:3000/send`, 
+        {
+          "email":"allissolanof2@gmail.com"
+        }).subscribe(res => {console.log(res)});
+    }); 
   }
 
   public sedFile(DATA:HTMLElement,d:HTMLFormElement ):void{
