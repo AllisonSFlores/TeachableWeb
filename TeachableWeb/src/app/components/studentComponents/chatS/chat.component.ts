@@ -1,0 +1,60 @@
+import { Component, OnInit, ViewChild } from '@angular/core';
+import { FormBuilder, FormGroup, Validators } from '@angular/forms';
+import { ActivatedRoute } from '@angular/router';
+import { StudentService } from 'src/app/services/student.service';
+import { ChatBoxComponent } from '../../chat-box/chat-box.component';
+
+@Component({
+  selector: 'app-chat',
+  templateUrl: './chat.component.html',
+  styleUrls: ['./chat.component.scss']
+})
+export class ChatComponent implements OnInit {
+  @ViewChild(ChatBoxComponent) box!: ChatBoxComponent;
+  messages!:[{"_id": string,
+  "writer": string,
+  "message": string,
+  "time": string}]
+  message="";
+  id =this.rutaActiva.snapshot.params.id;
+  form :FormGroup;
+  a=[{"name":"Noticias","link":`/student/${this.id}/newsT/${this.id}`},
+  {"name":"Salir","link":"/student/login"},
+  {"name":"Tareas","link":`/student/${this.id}/assigmentsT/${this.id}`},
+  //{"name":"Estudiantes","link":`/student/${this.id}/listStudenT/${this.id}`},
+  {"name":"Chat","link":`/student/${this.id}/chat/${this.id}`}];
+  constructor(
+    private rutaActiva: ActivatedRoute,
+    private studentService:StudentService,
+    private formBuilder: FormBuilder
+  ) { 
+    this.form=this.formBuilder.group({
+      message:['',Validators.required]
+    })
+  }
+
+  ngOnInit(): void {
+    this.getMessages()
+  }
+  sendMessage(){
+    this.message = this.form.value.message;
+    this.newMessage();
+    this.getMessages();
+  }
+  newMessage(){
+    this.studentService.newMessage(this.id,this.message,new Date().toString()).subscribe(
+      (res)=>{
+        console.log(res);
+      },
+      (err)=>{console.log(err)}
+    )
+  }
+  getMessages(){
+    this.studentService.getChat(this.id).subscribe(
+      (res)=>{
+        this.messages=res[0].chat
+      },
+      (err)=>{console.log(err)}
+    )
+  }
+}

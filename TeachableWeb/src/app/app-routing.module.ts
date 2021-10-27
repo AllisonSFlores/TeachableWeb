@@ -6,8 +6,10 @@ import { ManageStudentComponent } from './components/Admin/manage-courses/manage
 import { ListCoursesComponent } from './components/list-courses/list-courses.component';
 import { LoginComponent } from './components/login/login.component';
 import { TeacherModule } from './teacherModule/teacher.module';
+import { StudentModule } from './studentModule/student.module';
 const routes: Routes = [
   {path:'teacher/:id', loadChildren: () => import ('./teacherModule/teacher.module').then(x => x.TeacherModule)},
+  {path:'student/:id', loadChildren: () => import ('./studentModule/student.module').then(x => x.StudentModule)},
   {path: 'login', component:LoginComponent},
   {path: 'listCourses',component:ListCoursesComponent},
   {path: 'admin',component:FunctionsComponent},

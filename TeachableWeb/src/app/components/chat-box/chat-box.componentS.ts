@@ -6,7 +6,7 @@ import { FormBuilder, FormGroup, Validators} from '@angular/forms';
   templateUrl: './chat-box.component.html',
   styleUrls: ['./chat-box.component.scss']
 })
-export class ChatBoxComponent implements OnInit {
+export class ChatBoxComponentS implements OnInit {
   @Input() messages!:[{"_id": string,
   "writer": string,
   "message": string,

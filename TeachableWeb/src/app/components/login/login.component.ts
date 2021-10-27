@@ -60,7 +60,8 @@ export class LoginComponent implements OnInit {
             this.router.navigate(['listCourses']);
             break;
           default:
-            console.log("Estudiante")
+            console.log("Estudiante");
+            this.router.navigate(['listCourses']);
         }
       },
       (err)=>console.log(err))
