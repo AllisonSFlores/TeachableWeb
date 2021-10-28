@@ -18,7 +18,7 @@ export class ListCoursesComponent implements OnInit {
     ) {   }
 
   ngOnInit(): void {
-    this.typeUser="8";
+    this.typeUser="7";
     this.navigateTo("612fff670dd9995aa14b641b");
   }
 
