@@ -15,9 +15,9 @@ export class StudentComponent implements OnInit {
 
   ngOnInit(): void {
     const id =this.rutaActiva.snapshot.params.id;
-    this.a=[{"name":"Noticias","link":`/student/${id}/newsT/${id}`},
+    this.a=[{"name":"Noticias","link":`/student/${id}/newsS/${id}`},
     {"name":"Salir","link":"/student/login"},
-    {"name":"Tareas","link":`/student/${id}/assigmentsT/${id}`},
+    {"name":"Tareas","link":`/student/${id}/assigmentsS/${id}`},
    // {"name":"Estudiantes","link":`/student/${id}/listStudenT/${id}`},
     {"name":"Chat","link":`/student/${id}/chat/${id}`}]
   }

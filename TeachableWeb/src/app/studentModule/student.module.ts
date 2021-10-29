@@ -3,7 +3,7 @@ import { CommonModule } from '@angular/common';
 import { ReactiveFormsModule } from '@angular/forms';
 //components
 import { StudentRoutingModule } from './student-routing.module';
-import { NewsComponent } from '../components/studentComponents/newsS/news.component';
+import { NewsComponent } from '../components/studentComponents/news/news.component';
 import { AssignmentsComponent } from '../components/studentComponents/assignmentsS/assignments.component';
 //import { ListStudentComponent } from '../components/teacherComponents/list-student/list-student.component';
 import { MenuComponent } from '../components/studentComponents/menuS/menu.component';
