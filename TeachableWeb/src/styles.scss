@@ -1,5 +1,21 @@
 /* You can add global styles to this file, and also import other style files */
 
+.centrarDiv {
+    margin: 1rem;
+    padding: 1rem;
+    /* IMPORTANTE */
+    text-align: center;
+    align-items: center;
+}
+
+.centrarIn {
+    float: none;
+    text-align: center;
+    margin: 0.5rem;
+    padding: 0.5rem;
+    overflow-wrap: break-word;
+}
+
 html,
 body {
     height: 100%;
@@ -15,7 +31,8 @@ h2,
 h3,
 h4,
 h5,
-h6 {
+h6,
+label {
     margin-top: 0;
     margin-bottom: 0.5rem;
     color: #020202;
@@ -49,6 +66,17 @@ textarea {
     font-size: 16px;
     width: 100%;
     height: 600%;
+}
+
+.btn-form {
+    background-color: #7bd17d;
+    /* Green */
+    border: none;
+    color: white;
+    padding: 15px 32px;
+    width: 15%;
+    height: 30px;
+    margin: 0.5rem;
 }
 
 .btn-card {

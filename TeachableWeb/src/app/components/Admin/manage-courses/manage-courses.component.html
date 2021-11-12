@@ -1,1 +1,11 @@
-<p>manage-courses works!</p>
+<div class="div-buttons">
+    <h1>Cursos actuales</h1>
+    <ol>
+        <li [routerLink]="['/admin/updateCourse']">curso 1</li>
+        <li>curso 2</li>
+        <li>curso 3</li>
+    </ol>
+    <div>
+        <button class="btn btn-primary" [routerLink]="['/admin/insertCourse']">Insertar curso</button>
+    </div>
+</div>

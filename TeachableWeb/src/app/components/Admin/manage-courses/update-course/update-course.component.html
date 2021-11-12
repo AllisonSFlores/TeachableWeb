@@ -1,1 +1,68 @@
-<p>update-course works!</p>
+<div class="centrarDiv">
+    <h1>Administrar curso</h1>
+</div>
+<p></p>
+<div class="centrarDiv">
+    <button mat-raised-button (click)="goStudents()" class="btn-form">Estudiantes</button>
+</div>
+
+<p></p>
+
+<div class="centrarDiv">
+    <form [formGroup]="form" (submit)="update()">
+        <mat-form-field class="centrarIn">
+            <input matInput type="text" formControlName="nombre" placeholder="Nombre">
+        </mat-form-field>
+        <p></p>
+        <mat-form-field class="centrarIn">
+            <mat-select formControlName="grado" placeholder="Grado">
+                <mat-option value="1">1</mat-option>
+                <mat-option value="2">2</mat-option>
+                <mat-option value="3">3</mat-option>
+                <mat-option value="4">4</mat-option>
+                <mat-option value="5">5</mat-option>
+                <mat-option value="6">6</mat-option>
+            </mat-select>
+        </mat-form-field>
+        <p></p>
+        <label>Profesor actual: {{actualProfe}}</label>
+        <p></p>
+        <label>Nuevo profesor: </label>
+        <mat-form-field class="centrarIn">
+            <mat-select formControlName="profesor" placeholder="Profesor">
+                <mat-option value="Juanito">Juanito</mat-option>
+            </mat-select>
+        </mat-form-field>
+        <p></p>
+        <label>Horario Actual: {{horario}}</label>
+        <p></p>
+        <mat-form-field class="centrarIn">
+            <input matInput type="time" formControlName="horaIn" placeholder="Hora inicio">
+        </mat-form-field>
+        <mat-form-field class="centrarIn">
+            <input matInput type="time" formControlName="horaFin" placeholder="Hora fin">
+        </mat-form-field>
+        <p></p>
+        <mat-form-field class="centrarIn">
+            <mat-select formControlName="dia1" placeholder="Dia 1">
+                <mat-option value="L">lunes</mat-option>
+                <mat-option value="K">Martes</mat-option>
+                <mat-option value="M">Miercoles</mat-option>
+                <mat-option value="J">Jueves</mat-option>
+                <mat-option value="V">Viernes</mat-option>
+            </mat-select>
+        </mat-form-field>
+        <mat-form-field class="centrarIn">
+            <mat-select formControlName="dia2" placeholder="Dia 2">
+                <mat-option value="L">lunes</mat-option>
+                <mat-option value="K">Martes</mat-option>
+                <mat-option value="M">Miercoles</mat-option>
+                <mat-option value="J">Jueves</mat-option>
+                <mat-option value="V">Viernes</mat-option>
+            </mat-select>
+        </mat-form-field>
+        <p></p>
+        <button mat-raised-button ((click))="update()" class="btn-form">Update</button>
+    </form>
+
+</div>

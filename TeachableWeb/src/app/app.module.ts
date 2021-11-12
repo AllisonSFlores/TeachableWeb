@@ -6,6 +6,10 @@ import { SharedModule } from './components/shared/shared.module';
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
+import { MatInputModule } from '@angular/material/input';
+import { MatButtonModule } from '@angular/material/button';
+import {MatFormFieldModule} from '@angular/material/form-field';
+import { MatSelectModule } from '@angular/material/select';
 
 //componentes
 import { LoginComponent } from './components/login/login.component';
@@ -41,7 +45,13 @@ import { ListCoursesComponent } from './components/list-courses/list-courses.com
     AppRoutingModule,
     BrowserAnimationsModule,
     SharedModule,
-    HttpClientModule
+    HttpClientModule,
+    MatInputModule,
+    MatSelectModule,
+    MatFormFieldModule,
+    MatButtonModule
+
+
   ],
   
   providers: [],

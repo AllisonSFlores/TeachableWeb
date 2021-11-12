@@ -11,5 +11,10 @@ export class ManageStudentComponent implements OnInit {
 
   ngOnInit(): void {
   }
-
+  agregar(){
+    
+  }
+  eliminar(){
+    
+  }
 }

@@ -10,11 +10,10 @@ import { StudentModule } from './studentModule/student.module';
 const routes: Routes = [
   {path:'teacher/:id', loadChildren: () => import ('./teacherModule/teacher.module').then(x => x.TeacherModule)},
   {path:'student/:id', loadChildren: () => import ('./studentModule/student.module').then(x => x.StudentModule)},
-  {path: 'login', component:LoginComponent},
+  {path: '', component:LoginComponent},
   {path: 'listCourses',component:ListCoursesComponent},
-  {path: 'admin',component:FunctionsComponent},
-  {path: 'manageCourses',component:ManageCoursesComponent},
-  {path: 'manageUsers',component:ManageStudentComponent}
+  {path: 'admin',loadChildren: () => import ('./admin-module/admin-module.module').then(x => x.AdminModuleModule)}
+
 
 ];
 
