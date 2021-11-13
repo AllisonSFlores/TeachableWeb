@@ -1,28 +1,39 @@
 import { Component, OnInit } from '@angular/core';
 import { MatSnackBar } from '@angular/material/snack-bar';
 import { Router } from '@angular/router';
+import { DataService } from 'src/app/services/data.service';
+import { ActivatedRoute } from '@angular/router';
+import { StudentService } from 'src/app/services/student.service';
+import { EmailService } from 'src/app/services/email.service';
 import { LoginService } from 'src/app/services/login.service';
-
 @Component({
   selector: 'app-list-courses',
   templateUrl: './list-courses.component.html',
   styleUrls: ['./list-courses.component.scss']
 })
 export class ListCoursesComponent implements OnInit {
-  list=[{}]
+  
+  id =this.rutaActiva.snapshot.params.id;
+  list=[{_id:"",name:""}]
+  
   typeUser=""
   constructor(
     private loginService:LoginService,
     private _snackBar: MatSnackBar,
-    private router:Router
-    ) {   }
+    private router:Router,
+    private rutaActiva: ActivatedRoute,
+    private StudentService: StudentService,
+    private emailService:EmailService
+    ) { 
+      this.ngOnInit();
+      }
 
   ngOnInit(): void {
-    this.typeUser="7";
-    this.navigateTo("612fff670dd9995aa14b641b");
+    this.setList();
+    
   }
 
-  setList(){
+  setList(): void{
     this.loginService.getMyInfo().subscribe(
       (res)=>{
         this.list = res.courses;

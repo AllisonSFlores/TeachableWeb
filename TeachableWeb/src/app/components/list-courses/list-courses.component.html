@@ -1,1 +1,24 @@
-<p>list-courses works!</p>
+
+<div class="container">
+	
+	<div class="table" id="htmlData">
+		<div class="table-header">
+			<div class="header__item"><a id="name" class="filter__link" >Id curso</a></div>
+			<div class="header__item"><a id="wins" class="filter__link filter__link--number" >Nombre</a></div>
+
+			
+		</div>
+		<div class="table-content">	
+			<div class="table-row" *ngFor="let item of list">
+				<div class="table-data">{{item._id}}</div>
+				<div class="table-data" >{{item.name}}</div>
+				<button (click)=navigateTo(item._id)> Detalles</button>
+			</div>
+		</div>	
+		
+	</div> 
+	
+    
+</div>
+<div>Icons made by <a href="https://www.flaticon.com/authors/kiranshastry" title="Kiranshastry">Kiranshastry</a> from <a href="https://www.flaticon.com/" title="Flaticon">www.flaticon.com</a></div>
+
