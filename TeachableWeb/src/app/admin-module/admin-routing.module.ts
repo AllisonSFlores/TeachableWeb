@@ -8,15 +8,17 @@ import { ManageUsersComponent } from '../components/Admin/manage-users/manage-us
 import { UpdateCourseComponent } from '../components/Admin/manage-courses/update-course/update-course.component';
 import { InsertUserComponent } from '../components/Admin/manage-users/insert-user/insert-user.component';
 import { UpdateUserComponent } from '../components/Admin/manage-users/update-user/update-user.component';
+import { InsertStudentCourseComponent } from '../components/Admin/manage-courses/manage-student/insert-student-course/insert-student-course.component';
 const routes: Routes = [
   {path: '',component:FunctionsComponent},
   {path: 'manageCourses',component:ManageCoursesComponent},
   {path: 'manageUsers',component:ManageUsersComponent},
   {path: 'insertCourse',component:InsertCourseComponent},
-  {path: 'manageStudent',component:ManageStudentComponent},
-  {path: 'updateCourse',component:UpdateCourseComponent},
+  {path: 'manageStudent/:id',component:ManageStudentComponent},
+  {path: 'updateCourse/:id',component:UpdateCourseComponent},
   {path: 'insertUser',component:InsertUserComponent},
-  {path: 'updateUser',component:UpdateUserComponent}
+  {path: 'updateUser/:id',component:UpdateUserComponent},
+  {path: 'insertStudentCourse/:id',component:InsertStudentCourseComponent}
 
   ];
 

@@ -23,6 +23,7 @@ import { ManageStudentComponent } from './components/Admin/manage-courses/manage
 import { InsertUserComponent } from './components/Admin/manage-users/insert-user/insert-user.component';
 import { UpdateUserComponent } from './components/Admin/manage-users/update-user/update-user.component';
 import { ListCoursesComponent } from './components/list-courses/list-courses.component';
+import { InsertStudentCourseComponent } from './components/Admin/manage-courses/manage-student/insert-student-course/insert-student-course.component';
 
 
 @NgModule({
@@ -37,7 +38,8 @@ import { ListCoursesComponent } from './components/list-courses/list-courses.com
     UpdateCourseComponent,
     ManageStudentComponent,
     InsertUserComponent,
-    UpdateUserComponent
+    UpdateUserComponent,
+    InsertStudentCourseComponent
   ],
   imports: [
     BrowserModule,

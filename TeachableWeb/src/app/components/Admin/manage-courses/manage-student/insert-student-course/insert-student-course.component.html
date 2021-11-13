@@ -1,6 +1,6 @@
 <div class="centrarDiv">
     <h1>
-        Estudiantes curso
+        Estudiantes para agregar al curso
     </h1>
     <p></p>
     <div *ngFor="let person of data">
@@ -8,6 +8,5 @@
         <label for="person.nombre"> {{person.nombre}}</label><br>
     </div>
     <p></p>
-    <button mat-raised-button [routerLink]="['/admin/insertStudentCourse',idCourse]" class="btn-form">Agregar</button>
-    <button mat-raised-button (click)="eliminar()" class="btn-form">Eliminar</button>
+    <button mat-raised-button (click)="agregar()" class="btn-form">Agregar</button>
 </div>

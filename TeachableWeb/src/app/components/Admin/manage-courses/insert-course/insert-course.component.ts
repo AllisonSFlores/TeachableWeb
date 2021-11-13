@@ -18,6 +18,8 @@ export class InsertCourseComponent implements OnInit {
       dia1:[''],
       dia2:[''],
     });
+
+  
   }
   ngOnInit(): void {
   }

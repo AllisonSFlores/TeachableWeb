@@ -29,9 +29,6 @@ export class UpdateCourseComponent implements OnInit {
 
   }
 
-  goStudents(){
-    this.router.navigateByUrl('/admin/manageStudent');
 
-  }
 
 }

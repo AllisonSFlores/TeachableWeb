@@ -1,1 +1,11 @@
-<p>manage-users works!</p>
+<div class="centrarDiv">
+    <h1>
+        Usuarios
+    </h1>
+    <p></p>
+    <ol>
+        <li *ngFor="let user of data" [routerLink]="['/admin/updateUser',user.id]">{{user.nombre}}</li>
+    </ol>
+    <p></p>
+    <button mat-raised-button [routerLink]="['/admin/insertUser']" class="btn-form">Agregar</button>
+</div>
