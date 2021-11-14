@@ -18,11 +18,11 @@ export class ChatComponent implements OnInit {
   message="";
   id =this.rutaActiva.snapshot.params.id;
   form :FormGroup;
-  a=[{"name":"Noticias","link":`/student/${this.id}/newsT/${this.id}`},
-  {"name":"Salir","link":"/student/login"},
-  {"name":"Tareas","link":`/student/${this.id}/assigmentsT/${this.id}`},
-  //{"name":"Estudiantes","link":`/student/${this.id}/listStudenT/${this.id}`},
-  {"name":"Chat","link":`/student/${this.id}/chat/${this.id}`}];
+  b=[{"name":"Noticias","link":`/student/${this.id}/newsS/${this.id}`},
+  {"name":"Salir","link":"/"},
+  {"name":"Tareas","link":`/student/${this.id}/assigmentsS/${this.id}`},
+ // {"name":"Estudiantes","link":`/student/${this.id}/listStudenS/${this.id}`},
+  {"name":"Chat","link":`/student/${this.id}/chatS/${this.id}`}];
   constructor(
     private rutaActiva: ActivatedRoute,
     private studentService:StudentService,

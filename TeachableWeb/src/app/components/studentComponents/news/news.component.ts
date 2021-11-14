@@ -15,11 +15,10 @@ export class NewsComponent implements OnInit {
   news=[{"title":"Bienvenida",
   "description":"Nos vemos..."}
   ];
-  a=[{"name":"Noticias","link":`/student/${this.id}/newsT/${this.id}`},
-    {"name":"Salir","link":"/login"},
-    {"name":"Tareas","link":`/student/${this.id}/assigmentsT/${this.id}`},
-    //{"name":"Estudiantes","link":`/student/${this.id}/listStudenT/${this.id}`},
-    {"name":"Chat","link":`/student/${this.id}/chat/${this.id}`}];
+  a=[{"name":"Noticias","link":`/student/${this.id}/newsS/${this.id}`},
+  {"name":"Salir","link":"/"},
+  {"name":"Tareas","link":`/student/${this.id}/assigmentsS/${this.id}`},
+  {"name":"Chat","link":`/student/${this.id}/chatS/${this.id}`}];
   
   constructor(
     private formBuilder: FormBuilder,
