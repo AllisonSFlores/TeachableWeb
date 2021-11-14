@@ -21,7 +21,8 @@ export class ChatComponent implements OnInit {
   b=[{"name":"Noticias","link":`/student/${this.id}/newsS/${this.id}`},
   {"name":"Salir","link":"/"},
   {"name":"Tareas","link":`/student/${this.id}/assigmentsS/${this.id}`},
- // {"name":"Estudiantes","link":`/student/${this.id}/listStudenS/${this.id}`},
+  {"name":"Profesor","link":`/student/${this.id}/teacherCourse/${this.id}`},
+  // {"name":"Estudiantes","link":`/student/${this.id}/listStudenS/${this.id}`},
   {"name":"Chat","link":`/student/${this.id}/chatS/${this.id}`}];
   constructor(
     private rutaActiva: ActivatedRoute,
