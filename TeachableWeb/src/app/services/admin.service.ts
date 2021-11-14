@@ -14,22 +14,22 @@ export class AdminService {
 
   //rutas get
   getUserInfo(idUser:string):Observable<any>{
-    return this.http.get(`${this.API_URL}/${idUser}`,
+    return this.http.get(`${this.API_URL}${idUser}`,
     {"headers": {"Authorization":`Bearer ${this.data.getToken()}`}});
   }
 
   getAllUsers():Observable<any>{
-    return this.http.get(`${this.API_URL}/getAllUsers`,
+    return this.http.get(`${this.API_URL}getAllUsers`,
     {"headers": {"Authorization":`Bearer ${this.data.getToken()}`}});
   }
 
   getAllCourses():Observable<any>{
-    return this.http.get(`${this.API_URL}/courses/allcourses`,
+    return this.http.get(`${this.API_URL}courses/allcourses`,
     {"headers": {"Authorization":`Bearer ${this.data.getToken()}`}});
   }
 
   getCourse(idCourse:string):Observable<any>{
-    return this.http.get(`${this.API_URL}/courses/${idCourse}`,
+    return this.http.get(`${this.API_URL}courses/${idCourse}`,
     {"headers": {"Authorization":`Bearer ${this.data.getToken()}`}});
   }
 //rutas patch

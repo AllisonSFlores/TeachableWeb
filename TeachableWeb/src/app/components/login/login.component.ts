@@ -54,6 +54,7 @@ export class LoginComponent implements OnInit {
         switch(res.permissionLevel){
           case 2048:
             console.log("Administrador");
+            this.router.navigate(['admin']);
             break;
           case 7:
             console.log("Es un profesor");
