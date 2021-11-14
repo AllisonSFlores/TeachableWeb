@@ -1,9 +1,7 @@
 <div class="div-buttons">
     <h1>Cursos actuales</h1>
     <ol>
-        <li [routerLink]="['/admin/updateCourse',1]">curso 1</li>
-        <li>curso 2</li>
-        <li>curso 3</li>
+        <li *ngFor="let course of data" [routerLink]="['/admin/updateCourse',course._id]">{{course.name}}</li>
     </ol>
     <div>
         <button class="btn btn-primary" [routerLink]="['/admin/insertCourse']">Insertar curso</button>

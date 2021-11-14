@@ -13,24 +13,24 @@ export class AdminService {
   ) { }
 
   //rutas get
-  getUserInfo(idUser:string):Observable<any>{
+  getUserInfo(idUser:string){
     return this.http.get(`${this.API_URL}${idUser}`,
-    {"headers": {"Authorization":`Bearer ${this.data.getToken()}`}});
+    {"headers": {"Authorization":`Bearer ${this.data.getToken()}`}}).toPromise();
   }
 
-  getAllUsers():Observable<any>{
-    return this.http.get(`${this.API_URL}getAllUsers`,
-    {"headers": {"Authorization":`Bearer ${this.data.getToken()}`}});
+  getAllUsers(){
+    return this.http.get<any[]>(`${this.API_URL}getAllUsers`,
+    {"headers": {"Authorization":`Bearer ${this.data.getToken()}`}}).toPromise();
   }
 
-  getAllCourses():Observable<any>{
+  getAllCourses(){
     return this.http.get(`${this.API_URL}courses/allcourses`,
-    {"headers": {"Authorization":`Bearer ${this.data.getToken()}`}});
+    {"headers": {"Authorization":`Bearer ${this.data.getToken()}`}}).toPromise();
   }
 
-  getCourse(idCourse:string):Observable<any>{
+  getCourse(idCourse:string){
     return this.http.get(`${this.API_URL}courses/${idCourse}`,
-    {"headers": {"Authorization":`Bearer ${this.data.getToken()}`}});
+    {"headers": {"Authorization":`Bearer ${this.data.getToken()}`}}).toPromise();
   }
 //rutas patch
   removeStudent(idCourse:string,student:string):Observable<any>{
