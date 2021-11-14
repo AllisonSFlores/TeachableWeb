@@ -14,7 +14,7 @@ export class TeacherCourseComponent implements OnInit {
   form :FormGroup;
   p ="";
   d= "";
-  idT ="";
+  e ="";
   id =this.rutaActiva.snapshot.params.id;
   a=[{"name":"Noticias","link":`/student/${this.id}/newsS/${this.id}`},
   {"name":"Salir","link":"/"},
@@ -54,7 +54,8 @@ export class TeacherCourseComponent implements OnInit {
       
           (res)=>{
             this.p = res.name;
-            this.d = "email: "+res.email;
+            this.d = "email: "+res.email ;
+            this.e = "Nivel: "+res.level;
           },
           (err)=>{console.log(err)});
       },
