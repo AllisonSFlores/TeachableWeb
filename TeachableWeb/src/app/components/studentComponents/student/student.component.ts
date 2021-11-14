@@ -18,7 +18,8 @@ export class StudentComponent implements OnInit {
     this.a=[{"name":"Noticias","link":`/student/${id}/newsS/${id}`},
     {"name":"Salir","link":"/"},
     {"name":"Tareas","link":`/student/${id}/assigmentsS/${id}`},
-   // {"name":"Estudiantes","link":`/student/${this.id}/listStudenS/${this.id}`},
+    {"name":"Profesor","link":`/student/${id}/teacherCourse/${id}`},
+    // {"name":"Estudiantes","link":`/student/${this.id}/listStudenS/${this.id}`},
     {"name":"Chat","link":`/student/${id}/chatS/${id}`}];
   }
 

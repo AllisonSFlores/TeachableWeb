@@ -20,6 +20,7 @@ export class AssignmentsComponent implements OnInit {
     a=[{"name":"Noticias","link":`/student/${this.id}/newsS/${this.id}`},
     {"name":"Salir","link":"/"},
     {"name":"Tareas","link":`/student/${this.id}/assigmentsS/${this.id}`},
+    {"name":"Profesor","link":`/student/${this.id}/teacherCourse/${this.id}`},
     {"name":"Chat","link":`/student/${this.id}/chatS/${this.id}`}];
   form :FormGroup;
   constructor(
@@ -40,20 +41,7 @@ export class AssignmentsComponent implements OnInit {
     this.getAssigments();
     
   }
-  newAssigment(){
-    const code = this.form.value.code;
-    const tittle = this.form.value.tittle;
-    const des = this.form.value.description;
-    const dl = this.form.value.deadline;
-    this.studentService.newAssigment(this.id,code,tittle,des,dl).subscribe(
-      (res)=>{
-        this.getAssigments();
-        console.log(res);
-        this.messageCofirm()
-      },
-      (err)=>{console.log(err)});
-    
-  }
+  
   getAssigments(){
     this.studentService.getAssigments(this.id).subscribe(
       (res)=>{
@@ -62,10 +50,5 @@ export class AssignmentsComponent implements OnInit {
       },
       (err)=>{console.log(err)});
   }
-  messageCofirm(){
-    this._snackBar.open('Tarea agregada','',{
-      duration: 5000,
-      horizontalPosition: 'center',
-      verticalPosition: 'bottom'})
-  }
+  
 }

@@ -5,13 +5,15 @@ import { AssignmentsComponent } from '../components/studentComponents/assignment
 import { ListStudentComponent } from '../components/teacherComponents/list-student/list-student.component';
 import { StudentComponent } from '../components/studentComponents/student/student.component';
 import { ChatComponent } from '../components/studentComponents/chatS/chat.component';
+import{ TeacherCourseComponent } from '../components/studentComponents/teacherCourse/teacherCourse.component';
 
 const routes: Routes = [
   {path:'',component:StudentComponent},
   {path: 'newsS/:id',component:NewsComponent},
   {path: 'assigmentsS/:id',component:AssignmentsComponent},
   {path: 'listStudenS/:id',component:ListStudentComponent},
-  {path: 'chatS/:id', component:ChatComponent}
+  {path: 'chatS/:id', component:ChatComponent},
+  {path: 'teacherCourse/:id', component:TeacherCourseComponent}
 ];
 
 @NgModule({

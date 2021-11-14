@@ -5,21 +5,26 @@ import { ActivatedRoute } from '@angular/router';
 import { StudentService } from 'src/app/services/student.service';
 
 @Component({
-  selector: 'app-news',
-  templateUrl: './news.component.html',
-  styleUrls: ['./news.component.scss']
+  selector: 'app-teacherCourse',
+  templateUrl: './teacherCourse.component.html',
+  styleUrls: ['./teacherCourse.component.scss']
 })
-export class NewsComponent implements OnInit {
+export class TeacherCourseComponent implements OnInit {
+  
   form :FormGroup;
+  p ="";
+  d= "";
   id =this.rutaActiva.snapshot.params.id;
-  news=[{"title":"Bienvenida",
-  "description":"Nos vemos..."}
-  ];
   a=[{"name":"Noticias","link":`/student/${this.id}/newsS/${this.id}`},
   {"name":"Salir","link":"/"},
   {"name":"Profesor","link":`/student/${this.id}/teacherCourse/${this.id}`},
     {"name":"Tareas","link":`/student/${this.id}/assigmentsS/${this.id}`},
   {"name":"Chat","link":`/student/${this.id}/chatS/${this.id}`}];
+  news=[{"title":"Bienvenida",
+  "description":"Nos vemos..."}
+  ];
+  
+  
   
   constructor(
     private formBuilder: FormBuilder,
@@ -27,6 +32,7 @@ export class NewsComponent implements OnInit {
     private studentService: StudentService,
     private _snackBar: MatSnackBar,
   ) {
+    this.ngOnInit();
     this.form=this.formBuilder.group({
       tittle:['',Validators.required],
       description:['',Validators.required]
@@ -34,23 +40,19 @@ export class NewsComponent implements OnInit {
    }
 
   ngOnInit(): void {
+    this.getTeacher();
     const id =this.rutaActiva.snapshot.params.id;
-    this.getNews();
+    
   }
   
-  getNews(){
-    this.studentService.getNews(this.id).subscribe(
+  getTeacher(){
+    this.studentService.getCourse(this.id).subscribe(
+      
       (res)=>{
-        console.log(res[0].news);
-        this.news=res[0].news;
+        this.p =  res.teacher.name;
+        this.d = "email: "+res.teacher.email;
       },
       (err)=>{console.log(err)});
   }
-  messageCofirm(){
-    this._snackBar.open('Noticia agregada','',{
-      duration: 5000,
-      horizontalPosition: 'center',
-      verticalPosition: 'bottom'})
-  }
-
+ 
 }
