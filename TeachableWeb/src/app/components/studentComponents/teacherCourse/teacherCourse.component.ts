@@ -72,7 +72,7 @@ export class TeacherCourseComponent implements OnInit {
         this.level = ""+(parseFloat(this.level)+0.5);
         this.e = "Calificación general: "+this.scor+"/5"; 
     }
-    else{
+    else if(parseInt(s) < parseFloat(this.level)){
       this.scor = parseFloat(this.level)-0.5;
       this.level = ""+ (parseFloat(this.level)-0.5);
       this.e = "Calificación general: "+this.scor+"/5"; }
