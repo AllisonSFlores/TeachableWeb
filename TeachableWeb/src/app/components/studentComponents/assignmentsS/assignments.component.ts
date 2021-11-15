@@ -16,6 +16,7 @@ export class AssignmentsComponent implements OnInit {
     "description":"Deben enviarme un correo para agregarlos a las lista de google",
     "deadline":"12"}
     ];
+    Records = [{name:"Tarea1",date:"12/12/2021"},{name:"Tarea2",date:"13/12/2021"}];
     id =this.rutaActiva.snapshot.params.id;
     a=[{"name":"Noticias","link":`/student/${this.id}/newsS/${this.id}`},
     {"name":"Salir","link":"/"},
@@ -33,10 +34,12 @@ export class AssignmentsComponent implements OnInit {
       code:['',Validators.required],
       tittle:['',Validators.required],
       description:['',Validators.required],
-      deadline:['',Validators.required]
+      deadline:['',Validators.required],
+      recordName:['',Validators.required],
+      recordDate:['',Validators.required]
     })
    }
-
+   
   ngOnInit(): void {
     this.getAssigments();
     
@@ -50,5 +53,8 @@ export class AssignmentsComponent implements OnInit {
       },
       (err)=>{console.log(err)});
   }
+  newrecord(){
+    this.Records.push({name:this.form.value.recordName,date:this.form.value.recordDate});
+};
   
 }
