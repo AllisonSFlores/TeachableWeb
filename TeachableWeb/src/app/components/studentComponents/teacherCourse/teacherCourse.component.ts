@@ -55,7 +55,7 @@ export class TeacherCourseComponent implements OnInit {
           (res)=>{
             this.p = res.name;
             this.d = "email: "+res.email ;
-            this.e = "Nivel: "+res.level;
+            this.e = "Calificación general: "+res.level+"/5";
           },
           (err)=>{console.log(err)});
       },
