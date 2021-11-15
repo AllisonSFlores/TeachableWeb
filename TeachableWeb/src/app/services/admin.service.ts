@@ -32,15 +32,20 @@ export class AdminService {
     return this.http.get(`${this.API_URL}courses/${idCourse}`,
     {"headers": {"Authorization":`Bearer ${this.data.getToken()}`}}).toPromise();
   }
+
+  getCourseTwo(idCourse:string):Observable<any>{
+    return this.http.get(`${this.API_URL}courses/${idCourse}`,
+    {"headers": {"Authorization":`Bearer ${this.data.getToken()}`}});
+  }
 //rutas patch
-  removeStudent(idCourse:string,student:string):Observable<any>{
+  removeStudent(idCourse:string,student:any):Observable<any>{
     return this.http.patch(`${this.API_URL}courses/removeStudent/${idCourse}`,
-    {},{"headers": {"Authorization":`Bearer ${this.data.getToken()}`}});
+    student,{"headers": {"Authorization":`Bearer ${this.data.getToken()}`}});
   }
 
-  addParticipantCourse(idCourse:string,student:string):Observable<any>{
+  addParticipantCourse(idCourse:string,student:any):Observable<any>{
     return this.http.patch(`${this.API_URL}courses/newStudent/${idCourse}`,
-    {},{"headers": {"Authorization":`Bearer ${this.data.getToken()}`}});
+    student,{"headers": {"Authorization":`Bearer ${this.data.getToken()}`}});
   }
   /*
         * {
@@ -54,42 +59,31 @@ export class AdminService {
         }
     }*/
 
-  updateUser(idUser:string,user:string):Observable<any>{
+  updateUser(idUser:string,user:any):Observable<any>{
     return this.http.patch(`${this.API_URL}users/${idUser}`,
-    {},{"headers": {"Authorization":`Bearer ${this.data.getToken()}`}});
+    user,{"headers": {"Authorization":`Bearer ${this.data.getToken()}`}});
   }
-        /*this.email = email;
-        this.name = name;
-        this.id_card = id_card;
-        this.level = level;*/ 
+        
 
-  updateCourse(idCourse:string,course:string):Observable<any>{
+  updateCourse(idCourse:string,course:any):Observable<any>{
     return this.http.patch(`${this.API_URL}courses/${idCourse}`,
-    {},{"headers": {"Authorization":`Bearer ${this.data.getToken()}`}});
+    course,{"headers": {"Authorization":`Bearer ${this.data.getToken()}`}});
   }
 
-  addTeacherCourse(idCourse:string,teacher:string):Observable<any>{
+  addTeacherCourse(idCourse:string,teacher:any):Observable<any>{
     return this.http.patch(`${this.API_URL}courses/newTeacher/${idCourse}`,
-    {},{"headers": {"Authorization":`Bearer ${this.data.getToken()}`}});
+    teacher,{"headers": {"Authorization":`Bearer ${this.data.getToken()}`}});
   }
 
   //rutas post
-  insertUser(user:string):Observable<any>{
+  insertUser(user:any):Observable<any>{
     return this.http.post(`${this.API_URL}users`,
-    {},{"headers": {"Authorization":`Bearer ${this.data.getToken()}`}});
+    user,{"headers": {"Authorization":`Bearer ${this.data.getToken()}`}});
   }
-  /*
-        this.email = email;
-        this.password = password;
-        this.permissionLevel = permissionLevel;
-        this.name = name;
-        this.id_card = id_card;
-        this.level = level;
-   */
 
-  insertCourse(course:string):Observable<any>{
+  insertCourse(course:any):Observable<any>{
     return this.http.post(`${this.API_URL}courses`,
-    {},{"headers": {"Authorization":`Bearer ${this.data.getToken()}`}});
+    course,{"headers": {"Authorization":`Bearer ${this.data.getToken()}`}});
   }
   /*{
         "name":"FOC",

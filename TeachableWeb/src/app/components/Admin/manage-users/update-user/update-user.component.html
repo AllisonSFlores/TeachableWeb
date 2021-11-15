@@ -12,9 +12,10 @@
         </mat-form-field>
         <p></p>
         <mat-form-field class="centrarIn">
-            <input matInput type="password" formControlName="password" placeholder="Contraseña">
+            <input matInput type="text" formControlName="id_card" placeholder="Id_card">
         </mat-form-field>
         <p></p>
+
         <mat-form-field class="centrarIn">
             <mat-select formControlName="nivel" placeholder="Nivel">
                 <mat-option value="1">1</mat-option>
@@ -30,5 +31,7 @@
         <p></p>
         <button mat-raised-button ((click))="update()" class="btn-form">Actualizar</button>
     </form>
+    <p></p>
+    <button mat-raised-button (click)="delete()" class="btn-form">Eliminar</button>
 
 </div>

@@ -9,19 +9,18 @@ import { AdminService } from 'src/app/services/admin.service';
 })
 export class UpdateCourseComponent implements OnInit {
   form :FormGroup;
-  actualProfe="Juanito";
-  horario="Dia 1: l   Dia 2:M 7:00 am a 8:30 am";
-  data:any;
+  data:any=[];
   id:any;
+  teachers:any=[];
   constructor(private formBuilder: FormBuilder, private router:Router,private service:AdminService,private route: ActivatedRoute) { 
     this.form=this.formBuilder.group({
-      nombre:[''],
-      grado:[''],
-      profesor:[''],
-      horaIn:[''],
-      horaFin:[''],
-      dia1:[''],
-      dia2:[''],
+      nombre:[],
+      grado:[],
+      profesor:[],
+      horaIn:[],
+      horaFin:[],
+      dia1:[],
+      dia2:[],
     });
     this.route.paramMap.subscribe(paramMap =>{
       this.id=paramMap.get('id')
@@ -30,17 +29,63 @@ export class UpdateCourseComponent implements OnInit {
   }
 
   ngOnInit(): void {
+    this.getTeachers();
+    this.getCourse();
+     
+
   }
-  
+  async getTeachers(){
+    var users:any=await this.service.getAllUsers();
+    users.forEach((element:any) => {
+      if(element.permissionLevel==7){
+        this.teachers.push(element);
+      }
+    });
+  }
   async getCourse(){
     this.data=await this.service.getCourse(String(this.id));
     console.log(this.data);
+    this.form=this.formBuilder.group({
+      nombre:[String(this.data.name)],
+      grado:[String(this.data.grade)],
+      profesor:[String(this.data.teacher.name)],
+      horaIn:[String(this.data.schedule.StartTime)],
+      horaFin:[String(this.data.schedule.EndTime)],
+      dia1:[String(this.data.schedule.dayOne)],
+      dia2:[String(this.data.schedule.dayTwo)],
+    });
   }
 
   update(){
-    console.log(this.form.value.nombre);
-
+    var teacher:any;
+    this.teachers.forEach((element:any) => {
+      if(element.name==String(this.form.value.profesor)){
+        teacher=element;
+      }
+    });
+    var json={name:this.form.value.nombre,
+    grade:this.form.value.grado,
+    schedule:{StartTime:this.form.value.horaIn,
+    EndTime:this.form.value.horaFin,
+    dayOne:this.form.value.dia1,
+    dayTwo:this.form.value.dia2},
+    teacher:{_id:teacher._id,name:teacher.name}}
+    this.service.updateCourse(this.id,json).subscribe(
+      (res)=>{
+        console.log("Actualizado");
+      },
+      (err)=>{console.log(err)});
   }
+
+  delete(){
+    this.service.deleteCourse(this.id).subscribe(
+      (res)=>{
+        console.log("Eliminado");
+        this.router.navigate(['/admin/manageCourses']);
+      },
+      (err)=>{console.log(err)});
+  }
+  
 
 
 

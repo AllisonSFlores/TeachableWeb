@@ -24,17 +24,11 @@
                 <mat-option value="6">6</mat-option>
             </mat-select>
         </mat-form-field>
-        <p></p>
-        <label>Profesor actual: {{actualProfe}}</label>
-        <p></p>
-        <label>Nuevo profesor: </label>
         <mat-form-field class="centrarIn">
             <mat-select formControlName="profesor" placeholder="Profesor">
-                <mat-option value="Juanito">Juanito</mat-option>
+                <mat-option *ngFor="let person of teachers" value={{person.name}}>{{person.name}}</mat-option>
             </mat-select>
         </mat-form-field>
-        <p></p>
-        <label>Horario Actual: {{horario}}</label>
         <p></p>
         <mat-form-field class="centrarIn">
             <input matInput type="time" formControlName="horaIn" placeholder="Hora inicio">
@@ -64,5 +58,7 @@
         <p></p>
         <button mat-raised-button ((click))="update()" class="btn-form">Update</button>
     </form>
+    <p></p>
+    <button mat-raised-button (click)="delete()" class="btn-form">Eliminar</button>
 
 </div>
