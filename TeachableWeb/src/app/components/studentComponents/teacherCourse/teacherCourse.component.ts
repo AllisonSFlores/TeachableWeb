@@ -1,3 +1,4 @@
+import { Element } from '@angular/compiler';
 import { Component, OnInit } from '@angular/core';
 import { FormBuilder, FormGroup, Validators } from '@angular/forms';
 import { MatSnackBar } from '@angular/material/snack-bar';
@@ -14,6 +15,7 @@ export class TeacherCourseComponent implements OnInit {
   form :FormGroup;
   p ="";
   d= "";
+  e ="";
   id =this.rutaActiva.snapshot.params.id;
   a=[{"name":"Noticias","link":`/student/${this.id}/newsS/${this.id}`},
   {"name":"Salir","link":"/"},
@@ -49,10 +51,20 @@ export class TeacherCourseComponent implements OnInit {
     this.studentService.getCourse(this.id).subscribe(
       
       (res)=>{
-        this.p =  res.teacher.name;
-        this.d = "email: "+res.teacher.email;
+        this.studentService.getTeach(res.teacher._id).subscribe(
+      
+          (res)=>{
+            this.p = res.name;
+            this.d = "email: "+res.email ;
+            this.e = "Calificación general: "+res.level+"/5";
+          },
+          (err)=>{console.log(err)});
       },
       (err)=>{console.log(err)});
-  }
- 
+      
+    }
+    score(s: String){
+      this.e = "Calificación general: "+s+"/5";
+    }
+    
 }

@@ -17,6 +17,10 @@ export class StudentService {
     {"headers": {"Authorization":`Bearer ${this.data.getToken()}`}});
   }
 
+  getTeach(idUser:string):Observable<any>{
+    console.log("servicio"+idUser);
+    return this.http.get(`${this.API_URL}${idUser}`);
+  }
   
   
   getCourse(idCourse:string):Observable<any>{
