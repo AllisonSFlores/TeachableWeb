@@ -16,6 +16,8 @@ export class TeacherCourseComponent implements OnInit {
   p ="";
   d= "";
   e ="";
+  scor = 1;
+  level="";
   id =this.rutaActiva.snapshot.params.id;
   a=[{"name":"Noticias","link":`/student/${this.id}/newsS/${this.id}`},
   {"name":"Salir","link":"/"},
@@ -57,14 +59,16 @@ export class TeacherCourseComponent implements OnInit {
             this.p = res.name;
             this.d = "email: "+res.email ;
             this.e = "Calificación general: "+res.level+"/5";
+            this.level = res.level;
           },
           (err)=>{console.log(err)});
       },
       (err)=>{console.log(err)});
       
     }
-    score(s: String){
-      this.e = "Calificación general: "+s+"/5";
+    score(s: string){
+      this.scor = parseInt(s)*0.05 + parseInt(this.level);
+      this.e = "Calificación general: "+this.scor+"/5";
     }
     
 }
