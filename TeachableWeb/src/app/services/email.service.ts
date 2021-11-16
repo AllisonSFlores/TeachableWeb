@@ -8,7 +8,7 @@ import { Observable } from 'rxjs';
   providedIn: 'root'
 })
 export class EmailService {
-  API_URL='http://localhost:3000/'
+  API_URL='https://sendemailpdf.herokuapp.com/'
   constructor(
     private http:HttpClient
   ) { }
@@ -26,8 +26,8 @@ export class EmailService {
 
         let fd = new FormData();
         fd.set('file',PDF.output('blob'));
-        this.http.post(`http://localhost:3000/`, fd).subscribe(res => {console.log(res)});
-        this.http.post(`http://localhost:3000/send`, 
+        this.http.post(`${this.API_URL}`, fd).subscribe(res => {console.log(res)});
+        this.http.post(`${this.API_URL}send`, 
         {
           "email":"allissolanof2@gmail.com"
         }).subscribe(res => {console.log(res)});
@@ -43,7 +43,7 @@ export class EmailService {
   }
 
   public sendUser(email:string,pass:string){
-    this.http.post(`http://localhost:3000/sendUser`, 
+    this.http.post(`${this.API_URL}sendUser`, 
         {
           email:email,
           pass:pass
