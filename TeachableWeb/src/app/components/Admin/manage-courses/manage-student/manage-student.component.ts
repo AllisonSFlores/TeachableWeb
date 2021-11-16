@@ -53,6 +53,7 @@ export class ManageStudentComponent implements OnInit {
           duration: 5000,
           horizontalPosition: 'center',
           verticalPosition: 'bottom'})
+          this.ngOnInit();
       },
       (err)=>{console.log(err)});
   }

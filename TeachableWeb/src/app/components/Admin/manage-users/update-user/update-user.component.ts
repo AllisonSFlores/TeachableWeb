@@ -2,6 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import { FormBuilder,FormGroup } from '@angular/forms';
 import { Router,ActivatedRoute } from '@angular/router';
 import { AdminService } from 'src/app/services/admin.service';
+import { MatSnackBar } from '@angular/material/snack-bar';
 @Component({
   selector: 'app-update-user',
   templateUrl: './update-user.component.html',
@@ -11,7 +12,7 @@ export class UpdateUserComponent implements OnInit {
   form :FormGroup;
   id:any;
   data:any;
-  constructor(private formBuilder: FormBuilder,private router:Router,private service:AdminService,private route: ActivatedRoute) { 
+  constructor(private formBuilder: FormBuilder,private router:Router,private service:AdminService,private route: ActivatedRoute,private _snackBar: MatSnackBar) { 
 
     this.form=this.formBuilder.group({
       nombre:[''],
@@ -58,7 +59,11 @@ export class UpdateUserComponent implements OnInit {
     }
     this.service.updateUser(this.id,json).subscribe(
       (res)=>{
-        console.log("Insertado");
+        console.log("Update");
+        this._snackBar.open('Valor actualizado','',{
+          duration: 5000,
+          horizontalPosition: 'center',
+          verticalPosition: 'bottom'})
       },
       (err)=>{console.log(err)});
   

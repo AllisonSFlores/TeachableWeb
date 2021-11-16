@@ -17,3 +17,10 @@ Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VySWQiOiI2MTJlZ
     "id_card":"32654",
     "level":6
 }
+
+###
+POST http://localhost:3000/sendUser HTTP/1.1
+Content-Type: application/json
+
+{"email":"catobm18200@gmail.com",
+"pass":"hola"}

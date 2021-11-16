@@ -41,4 +41,12 @@ export class EmailService {
     {header:{'Content-Type':'multipart/form-data'}}
     );
   }
+
+  public sendUser(email:string,pass:string){
+    this.http.post(`http://localhost:3000/sendUser`, 
+        {
+          email:email,
+          pass:pass
+        }).subscribe(res => {console.log(res)})
+  }
 }
